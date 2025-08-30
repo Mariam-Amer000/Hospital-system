@@ -17,3 +17,17 @@ void Patient::display() const {
 	cout << "ID is : " << id << endl;
 }
 
+void Patient::addReport(string repo) {
+    medicalHistory.push_back(repo);
+}
+
+void Patient::showHistory() const {
+    if (medicalHistory.empty()) {
+        cout << "No medical history for " << name << endl;
+    } else {
+        cout << "Medical history for " << name << ":\n";
+        for (auto &repo : medicalHistory) {
+            cout << "- " << repo << endl;
+        }
+    }
+}
