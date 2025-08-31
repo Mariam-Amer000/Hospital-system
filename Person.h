@@ -1,12 +1,19 @@
-#pragma once
-#include<iostream>
+#ifndef PERSON_H
+#define PERSON_H
+#include <iostream>
+#include <string>
 using namespace std;
-class person
+
+
+class Person
 {
+
 protected:
 	string name;
 	char gender;
 	int age, id;
+	
+	
 public:
 	//setter
 	void set_name(string name);
@@ -19,11 +26,13 @@ public:
 	char get_gender() const;
 	int get_age() const;
 	int get_id() const;
-	//
+	
 	virtual void display() const;
+	
 	//cons and des
-	person();	
-	person(string name, char gender, int age, int id);
-	~person();
+	Person();	
+	Person(string name, char gender, int age, int id);
+    virtual ~Person();
 };
 
+#endif // PERSON_H
