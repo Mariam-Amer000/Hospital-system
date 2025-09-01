@@ -10,7 +10,6 @@ Doctor::Doctor(string name, char gender, int age, int id, double salary, string 
     : Employee(name, gender, age, id, salary), specialization(spec), patient_number(patient_num) {
 }
 
-// changes
 // Destructor
 Doctor::~Doctor() {}
 
