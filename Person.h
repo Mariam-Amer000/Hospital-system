@@ -16,16 +16,16 @@ protected:
 	
 public:
 	//setter
-	void set_name(string name);
-	void set_gender(char gender);
-	void set_age(int age);
-	void set_id(int id);
+	void setName(string name);
+	void setGender(char gender);
+	void setAge(int age);
+	void setId(int id);
 
 	//getter
-	string get_name() const;
-	char get_gender() const;
-	int get_age() const;
-	int get_id() const;
+	string getName() const;
+	char getGender() const;
+	int getAge() const;
+	int getId() const;
 	
 	virtual void display() const;
 	

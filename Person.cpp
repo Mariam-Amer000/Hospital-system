@@ -1,14 +1,14 @@
 #include "person.h"
 
-void Person::set_name(string name){ this->name = name; }
-void Person::set_gender(char gender) { this->gender = gender; }
-void Person::set_age(int age) { this->age = age; }
-void Person::set_id(int id) { this->id = id; }
+void Person::setName(string name){ this->name = name; }
+void Person::setGender(char gender) { this->gender = gender; }
+void Person::setAge(int age) { this->age = age; }
+void Person::setId(int id) { this->id = id; }
 
-string Person::get_name() const {return name;}
-char Person::get_gender() const {return gender;}
-int Person::get_age() const {return age;}
-int Person::get_id()  const { return id; }
+string Person::getName() const {return name;}
+char Person::getGender() const {return gender;}
+int Person::getAge() const {return age;}
+int Person::getId()  const { return id; }
 
 void Person::display() const
 {
