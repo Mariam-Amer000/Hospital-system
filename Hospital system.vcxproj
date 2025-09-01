@@ -123,14 +123,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="Hospital system.cpp" />
+<<<<<<< HEAD
     <ClCompile Include="hospital.cpp" />
+=======
+    <ClCompile Include="Patient.cpp" />
+>>>>>>> 34b72a4ba879ea0f64577429be5a018f600a0d63
     <ClCompile Include="person.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Doctor.h" />
     <ClInclude Include="Employee.h" />
+<<<<<<< HEAD
     <ClInclude Include="hospital.h" />
+=======
+    <ClInclude Include="Patient.h" />
+>>>>>>> 34b72a4ba879ea0f64577429be5a018f600a0d63
     <ClInclude Include="person.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

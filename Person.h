@@ -29,7 +29,7 @@ public:
 	
 	virtual void display() const;
 	
-	//cons and des
+	//constructor & destructor
 	Person();	
 	Person(string name, char gender, int age, int id);
     virtual ~Person();

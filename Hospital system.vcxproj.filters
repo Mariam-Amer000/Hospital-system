@@ -24,7 +24,14 @@
     <ClCompile Include="Employee.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="hospital.cpp">
+=======
+    <ClCompile Include="Patient.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Doctor.cpp">
+>>>>>>> 34b72a4ba879ea0f64577429be5a018f600a0d63
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -35,7 +42,14 @@
     <ClInclude Include="Employee.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="hospital.h">
+=======
+    <ClInclude Include="Patient.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Doctor.h">
+>>>>>>> 34b72a4ba879ea0f64577429be5a018f600a0d63
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
