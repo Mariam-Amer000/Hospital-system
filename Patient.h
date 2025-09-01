@@ -15,7 +15,7 @@ private:
     vector<string> medicalHistory;
 
 public:
-    Patient(string name, char gender, int age, int id ,string disease);
+    Patient(string name, char gender, int age, int id, string disease);
 
     void setDisease(string d);
     string getDisease() const;
