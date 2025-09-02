@@ -43,7 +43,7 @@ void Patient::addReport(Patient& patient, Doctor* doctor) {
     dataManager.saveMedicalHistory(int(patient.getId()), prescriptionData);
 }
 
-void Patient::showHistory(int Patient_id) const {
+void Patient::showHistory(int Patient_id) {
     dataManager.loadData();
     for (const auto& patient : dataManager.listOfPatient) {
         if (patient.getId() == Patient_id) {
