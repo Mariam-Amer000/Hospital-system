@@ -1,0 +1,50 @@
+# depslib dependency file v1.0
+1756762282 source:e:\amal\data structure c++\hospital-system\employee.cpp
+	"Person.h"
+	"Employee.h"
+	<iostream>
+
+1756762282 e:\amal\data structure c++\hospital-system\person.h
+	<iostream>
+	<string>
+
+1756762282 e:\amal\data structure c++\hospital-system\employee.h
+	<iostream>
+	"Person.h"
+
+1756814716 source:e:\amal\data structure c++\hospital-system\hospital system.cpp
+	<iostream>
+
+1756762282 source:e:\amal\data structure c++\hospital-system\person.cpp
+	"person.h"
+
+1756826655 source:e:\amal\data structure c++\hospital-system\doctor.cpp
+	"Doctor.h"
+	"Patient.h"
+	<iostream>
+
+1756826642 e:\amal\data structure c++\hospital-system\doctor.h
+	"Employee.h"
+	"Patient.h"
+	<queue>
+	<vector>
+	<string>
+
+1756826804 e:\amal\data structure c++\hospital-system\patient.h
+	"Person.h"
+	<iostream>
+	<string>
+	<vector>
+	"DataManager.h"
+
+1756814984 e:\amal\data structure c++\hospital-system\datamanager.h
+	<iostream>
+	<vector>
+	<string>
+
+1756826804 source:e:\amal\data structure c++\hospital-system\patient.cpp
+	"Patient.h"
+	"DataManager.h"
+	"Doctor.h"
+	<iostream>
+
