@@ -36,7 +36,7 @@ public:
     void display() const override;
 
     // Queue operations
-    void enqueue(int patient_id);
+    void enqueue(Patient patient);
     Patient dequeue();
 
     // Appointment scheduling
