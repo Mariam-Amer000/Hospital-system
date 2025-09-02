@@ -1,0 +1,32 @@
+Doctor,10001,Ahmed Ali,45,M,Cardiology,120000
+Doctor,10002,Amal Ragab,38,F,Neurology,115000
+Doctor,10003,Muhammad Saeed,50,M,Orthopedics,130000
+Doctor,10004,Habiba Alaa,42,F,Pediatrics,118000
+Doctor,10005,Daniel Wilson,47,M,Dermatology,112000
+Doctor,10006,Mariem Ammer,39,F,Gastroenterology,119000
+Doctor,10007,James Anderson,55,M,Radiology,125000
+Doctor,10008,Karen Thomas,36,F,Oncology,123000
+Doctor,10009,Robert Lee,49,M,Endocrinology,117000
+Doctor,10010,Patricia Harris,41,F,Nephrology,121000
+Doctor,10011,William Clark,52,M,Cardiothoracic Surgery,135000
+Doctor,10012,Ahmed Ali,45,M,Cardiology,120000
+Doctor,10013,Amal Ragab,38,F,Neurology,115000
+Doctor,10014,Muhammad Saeed,50,M,Orthopedics,130000
+Doctor,10015,Habiba Alaa,42,F,Pediatrics,118000
+Doctor,10016,Daniel Wilson,47,M,Dermatology,112000
+Doctor,10017,Mariem Ammer,39,F,Gastroenterology,119000
+Doctor,10018,James Anderson,55,M,Radiology,125000
+Doctor,10019,Karen Thomas,36,F,Oncology,123000
+Doctor,10020,Robert Lee,49,M,Endocrinology,117000
+Doctor,10021,Patricia Harris,41,F,Nephrology,121000
+Doctor,10022,William Clark,52,M,Cardiothoracic Surgery,135000
+Staff,20001,David Wilson,35,M,,50000
+Staff,20002,Linda Martinez,29,F,,48000
+Staff,20003,James Taylor,40,M,,52000
+Staff,20004,Patricia Anderson,33,F,,47000
+Staff,20005,Christopher Thomas,38,M,,51000
+Staff,20006,Barbara Jackson,31,F,,49000
+Staff,20007,Matthew White,36,M,,50000
+Staff,20008,Jennifer Harris,34,F,,48500
+Staff,20009,Daniel Martin,42,M,,53000
+Staff,20010,Susan Thompson,30,F,,47500
