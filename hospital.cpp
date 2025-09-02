@@ -91,7 +91,7 @@
              << " (" << reqDoctor->getSpecialization() << ")" << endl;
 
              //add patient to doctor's queue.....
-             reqDoctor->enqueue(p.getId()); 
+             reqDoctor->enqueue(p); 
 
         dataManager.listOfPatient.push_back(p);
         dataManager.saveData();
