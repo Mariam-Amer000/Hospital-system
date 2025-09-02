@@ -1,8 +1,11 @@
 #include "DataManager.h"
 #include "Patient.h"
-#include "Employee.h"
 #include "Doctor.h"
 #include "Staff.h"
+#include "Employee.h"
+#include <fstream>
+#include <sstream>
+#include <iostream>
 
 void DataManager::loadData() {
     try {
