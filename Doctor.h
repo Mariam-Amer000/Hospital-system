@@ -1,14 +1,24 @@
 #pragma once
 #include "Employee.h"
+#include "Patient.h"
 #include <queue>
+#include <vector>
 #include <string>
+
+class Patient;
 using namespace std;
 
 class Doctor : public Employee {
 private:
+    static const int MAX_PATIENTS = 20; // Maximum number of patients a doctor can handle
+   vector<string> specializations = {
+    "Cardiology","Neurology","Orthopedics","Pediatrics","Dermatology",
+    "Gastroenterology","Radiology","Oncology","Endocrinology","Nephrology",
+    "Cardiothoracic Surgery"
+    };  
     string specialization;
-    int patient_number;
-    queue<int> patient_queue;
+     int patient_number;
+    queue<Patient> patient_queue;
 
 public:
     // Constructors & Destructor
@@ -27,5 +37,10 @@ public:
 
     // Queue operations
     void enqueue(int patient_id);
-    void dequeue();
+    Patient dequeue();
+
+    // Appointment scheduling
+    // must for organizing patient ....
+    bool Appointments();
+
 };
