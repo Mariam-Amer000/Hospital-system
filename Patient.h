@@ -5,7 +5,7 @@
 #include <string>
 #include <vector>
 #include "DataManager.h"
-class Doctor; 
+class Doctor;
 
 using namespace std;
 
@@ -24,7 +24,7 @@ public:
     string getDisease() const;
 
     void addReport(Patient& patient, Doctor* doctor);
-    void showHistory(int Patient_id) const;
+    void showHistory(int Patient_id);
 
     void display() const override;
 };
