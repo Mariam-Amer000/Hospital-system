@@ -30,9 +30,9 @@ void Doctor::display() const {
 }
 
 // Queue operations
-void Doctor::enqueue(int patient_id) {
+void Doctor::enqueue(Patient patient) {
     if (patient_number < MAX_PATIENTS) {
-        patient_queue.push(patient_id);
+        patient_queue.push(patient);
         patient_number++;
     }
     else {
