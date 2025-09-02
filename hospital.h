@@ -1,21 +1,36 @@
 #pragma once
 #include<iostream>
 #include<vector>
-#include"Patient.h"
+#include "Patient.h"
+#include "Employee.h"
+#include "DataManager.h"
+
 class hospital
 {
 private:
-	vector<Patient>listOfPatient;
+ DataManager dataManager;
+
 public:
-	void addPatient() {
-		int age, id;
-		string name;
-		char gener;
-		Patient p();
-		cout << "Enter informantin" << endl;
-		cout << "Name : ";
-		cin >> name;
-		p.setName(name);
-	}
+
+// Add a person
+	void addPatient();
+	void addDoctor();
+	void addStaff();
+
+// Update a person
+	void updateStaff(int id);
+	void updateDoctor(int id);
+	void updatePatient(int id);
+
+// Search for a person
+	void searchEmployee(int id);
+	void searchPatient(int id);
+
+// Remove a person
+	void removePatient(int Doc_ID);
+	void removeEmployee(int emp_ID);
+
+
 };
 
+	
