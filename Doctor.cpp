@@ -1,4 +1,5 @@
 #include "Doctor.h"
+#include "Patient.h"
 #include <iostream>
 using namespace std;
 
@@ -30,16 +31,33 @@ void Doctor::display() const {
 
 // Queue operations
 void Doctor::enqueue(int patient_id) {
-    patient_queue.push(patient_id);
-    patient_number++;
-}
-
-void Doctor::dequeue() {
-    if (patient_queue.empty()) {
-        cout << "The doctor doesn't have patients to remove." << endl;
+    if (patient_number < MAX_PATIENTS) {
+        patient_queue.push(patient_id);
+        patient_number++;
     }
     else {
-        patient_queue.pop();
-        patient_number--;
+        cout << "The doctor can't take more patients." << endl;
     }
 }
+
+Patient Doctor::dequeue() {
+    if (patient_queue.empty()) {
+        cout << "The doctor doesn't have patients to remove." << endl;
+        return Patient();  // Return a default Patient object
+    }
+    else {
+        Patient patient = patient_queue.front();
+
+        patient_queue.pop();
+        patient_number--;
+        return patient;
+    }
+}
+
+bool Doctor::Appointments() {
+    if (patient_number < MAX_PATIENTS) {
+        return true;
+    }
+    return false;
+}
+
