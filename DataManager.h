@@ -1,14 +1,13 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include <fstream>
-#include <sstream>
-#include <exception>
-#include "Patient.h"
-#include "Employee.h"
-#include "Doctor.h"
-#include "Staff.h"
+#include <string>
 using namespace std;
+
+class Patient;   
+class Employee;
+class Doctor;   
+class Staff;     
 
 class DataManager {
 public:
