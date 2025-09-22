@@ -11,6 +11,7 @@
 //}
 void Person::set_name(string name)
 {
+    //ÇÊÇßÏäÇ Çä ÇáÇÓã ÑÈÇÚí æßãÇä ßá ÇÓã ãä ÇáÇÑÈÚå Èíäå æÈíä ÇáÊÇäí ãÓÇİå æÇÍÏå ÈÓ
     string full_name;
     int word_count = 0;
     bool inside_word = false;
@@ -74,12 +75,12 @@ char Person::get_gender()
     return gender;
 }
 
-void Person::display()
+void Person::display() const
 {
     cout << "Name : " << name << endl;
     cout << "Age : " << age << endl;
     cout << "National Id : " << national_id << endl;
-    (gender == 'f' || gender == 'F') ? cout << "Gender : Female" : cout << "Gender : Male" << endl;
+    (gender == 'f' || gender == 'F') ? cout << "Gender : Female" << endl : cout << "Gender : Male" << endl;
 }
 
 Person::Person()

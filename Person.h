@@ -19,7 +19,7 @@ public:
 	int get_national_id();
 	char get_gender();
 	// another 
-	virtual void display();
+	virtual void display() const;
 	Person();
 	Person(string name, int age, int id, char gender);
 	~Person();
