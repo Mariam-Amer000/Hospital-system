@@ -126,14 +126,24 @@
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="Hospital System.cpp" />
+    <ClCompile Include="Medical_Record.cpp" />
+    <ClCompile Include="Patient.cpp" />
     <ClCompile Include="Person.cpp" />
     <ClCompile Include="Staff.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Doctor.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="Medical_Record.h" />
+    <ClInclude Include="Patient.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Staff.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Hospital_System_UML.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
