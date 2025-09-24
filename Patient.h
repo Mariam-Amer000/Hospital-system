@@ -10,7 +10,7 @@ class Patient :
 private:
     vector<Medical_Record>history;
 public:
-    void show_history();
+    void show_history()const;
     void display()const override;
     void show_last_visit();
     Patient();

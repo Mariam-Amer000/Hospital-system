@@ -14,10 +14,10 @@ public:
 	void set_national_id(int national_id);
 	void set_gender(char gender);
 	//getter
-	string get_name();
-	int get_age();
-	int get_national_id();
-	char get_gender();
+	string get_name()const;
+	int get_age()const;
+	int get_national_id()const;
+	char get_gender()const;
 	// another 
 	virtual void display() const;
 	Person();

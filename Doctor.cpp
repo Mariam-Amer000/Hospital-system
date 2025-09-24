@@ -37,6 +37,33 @@ void Doctor::display() const
     cout << "Specialization : " << specialization << endl;
     cout << "Max patient number : " << max_patient_number << endl;
     cout << "Current patient number : " << patient_number << endl;
+    cout << "Patient Queue: ";
+    queue<int> temp = patient_ids; 
+    while (!temp.empty()) {
+        cout << temp.front() << " ";
+        temp.pop();
+    }
+    cout << endl;
+}
+
+void Doctor::add_patient_queue(int patient_id) {
+    if (patient_number < max_patient_number) {
+        patient_ids.push(patient_id);
+        patient_number++;
+    }
+    else {
+        cout << "Doctor reached max patient capacity!" << endl;
+    }
+}
+
+void Doctor::remove_patient_queue() {
+    if (!patient_ids.empty()) {
+        patient_ids.pop();
+        patient_number--;
+    }
+    else {
+        cout << "No patients in queue." << endl;
+    }
 }
 
 Doctor::Doctor()

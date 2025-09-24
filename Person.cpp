@@ -55,22 +55,22 @@ void Person::set_gender(char gender)
     this->gender = gender;
 }
 
-string Person::get_name()
+string Person::get_name()const
 {
     return name;
 }
 
-int Person::get_age()
+int Person::get_age()const
 {
     return age;
 }
 
-int Person::get_national_id()
+int Person::get_national_id()const
 {
     return national_id;
 }
 
-char Person::get_gender()
+char Person::get_gender()const
 {
     return gender;
 }
