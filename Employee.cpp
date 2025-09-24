@@ -8,9 +8,19 @@ void Employee::set_salary(double salary)
     else this->salary = salary;
 }
 
+void Employee::set_have_access(bool b)
+{
+    have_access = b;
+}
+
 double Employee::get_salary() const
 {
     return salary;
+}
+
+bool Employee::get_access() const
+{
+    return have_access;
 }
 
 void Employee::display() const
