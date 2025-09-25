@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Data_Base.cpp" />
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="Hospital System.cpp" />
@@ -132,6 +133,7 @@
     <ClCompile Include="Staff.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Data_Base.h" />
     <ClInclude Include="Doctor.h" />
     <ClInclude Include="Employee.h" />
     <ClInclude Include="Medical_Record.h" />

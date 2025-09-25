@@ -33,7 +33,7 @@ Employee::Employee()
 {
 }
 
-Employee::Employee(string name, int age, int id, char gender, double salary):Person(name,age,id,gender)
+Employee::Employee(string name, int age, int id, char gender, double salary, bool have_access) :Person(name, age, id, gender), have_access(have_access)
 {
     set_salary(salary);
 }

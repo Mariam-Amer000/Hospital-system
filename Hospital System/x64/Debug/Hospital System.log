@@ -1,2 +1,9 @@
-﻿  Patient.cpp
+﻿  Data_Base.cpp
+  Doctor.cpp
+  Employee.cpp
+  Hospital System.cpp
+  Patient.cpp
+  Person.cpp
+  Staff.cpp
+  Generating Code...
   Hospital System.vcxproj -> E:\programming\computer science\Projects C++\Hospital System\x64\Debug\Hospital System.exe
