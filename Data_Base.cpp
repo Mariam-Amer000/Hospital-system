@@ -140,7 +140,7 @@ Doctor Data_Base::Find_doctor(int id)
 	bool found = 0;
 	if (Doctors.empty()) {
 		cout << "There is no doctors yet" << endl;
-		return;
+		return Doctor();
 	}
 	else
 	{
@@ -155,16 +155,16 @@ Doctor Data_Base::Find_doctor(int id)
 		if (!found) 
 		{ 
 			cout << "There is no doctor wiht this id : " << id << endl;
-			return;
+			return Doctor();
 		}
 	}
 }
 Staff Data_Base::Find_staff(int id)
 {
 	bool found = 0;
-	if (Doctors.empty()) {
+	if (Staffs.empty()) {
 		cout << "There is no Staff yet" << endl;
-		return;
+		return Staff();
 	}
 	else
 	{
@@ -179,16 +179,16 @@ Staff Data_Base::Find_staff(int id)
 		if (!found)
 		{
 			cout << "There is no Staff wiht this id : " << id << endl;
-			return;
+			return Staff();
 		}
 	}
 }
-Patient Data_Base::Fine_patient(int id)
+Patient Data_Base::Find_patient(int id)
 {
 	bool found = 0;
-	if (Doctors.empty()) {
+	if (Patients.empty()) {
 		cout << "There is no Patients yet" << endl;
-		return;
+		return Patient();
 	}
 	else
 	{
@@ -203,7 +203,122 @@ Patient Data_Base::Fine_patient(int id)
 		if (!found)
 		{
 			cout << "There is no Patient wiht this id : " << id << endl;
-			return;
+			return Patient();
 		}
 	}
+}
+
+void Data_Base::update_doctor(int id)
+{
+	bool found = 0;
+	if (Doctors.empty()) {
+		cout << "There is no doctors yet" << endl;
+		return;
+	}
+	else
+	{
+		for (int i = 0; i < Doctors.size(); i++)
+		{
+			if (Doctors[i].get_national_id() == id)
+			{
+				found = 1;
+			}
+		}
+		if (!found)
+		{
+			cout << "There is no doctor wiht this id : " << id << endl;
+			return;
+		}
+		else 
+		{
+			cout << "choose " << endl;
+			cout << "1- National id" << endl;
+			cout << "2- Name" << endl;
+			cout << "3- Age" << endl;
+			cout << "4- Gender" << endl;
+			cout << "5- salary" << endl;
+			cout << "6- specialization" << endl;
+			cout << "7- max_patient_number" << endl;
+			cout << "8- Haveing access" << endl;
+			cout << "9- Back" << endl;
+		}
+	}
+}
+
+void Data_Base::update_staff(int id)
+{
+	bool found = 0;
+	if (Doctors.empty()) {
+		cout << "There is no staff yet" << endl;
+		return;
+	}
+	else
+	{
+		for (int i = 0; i < Staffs.size(); i++)
+		{
+			if (Staffs[i].get_national_id() == id)
+			{
+				found = 1;
+			}
+		}
+		if (!found)
+		{
+			cout << "There is no staff wiht this id : " << id << endl;
+			return;
+		}
+		else
+		{
+			cout << "choose " << endl;
+			cout << "1- National id" << endl;
+			cout << "2- Name" << endl;
+			cout << "3- Age" << endl;
+			cout << "4- Gender" << endl;
+			cout << "5- salary" << endl;
+			cout << "6- Back" << endl;
+		}
+	}
+}
+
+void Data_Base::update_patient(int id)
+{
+	bool found = 0;
+	if (Patients.empty()) {
+		cout << "There is no patient yet" << endl;
+		return;
+	}
+	else
+	{
+		for (int i = 0; i < Patients.size(); i++)
+		{
+			if (Patients[i].get_national_id() == id)
+			{
+				found = 1;
+			}
+		}
+		if (!found)
+		{
+			cout << "There is no patient wiht this id : " << id << endl;
+			return;
+		}
+		else
+		{
+			cout << "choose " << endl;
+			cout << "1- National id" << endl;
+			cout << "2- Name" << endl;
+			cout << "3- Age" << endl;
+			cout << "4- Gender" << endl;
+			cout << "5- Back" << endl;
+			//ÇÚÏá ÈÇÞí ÍæÇÕ ÇáãÑíÖ Òí ÇáÊÇÑíÎ ÇáãÑÖí æÇáÑæÔÊå 
+		}
+	}
+}
+
+void Data_Base::update_specialization()
+{
+	int chooise;
+	display_specialization();
+	cout << "enter the number of the choosen one" << endl;
+	cin >> chooise;
+	cout << "enter the new name";
+	cin >> specializations.at(chooise - 1);
 }

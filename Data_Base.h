@@ -31,6 +31,11 @@ public:
 	//Search 
 	Doctor Find_doctor(int id);
 	Staff Find_staff(int id);
-	Patient Fine_patient(int id);
+	Patient Find_patient(int id);
+	//update 
+	void update_doctor(int id);
+	void update_staff(int id);
+	void update_patient(int id);
+	void update_specialization();
 };
 

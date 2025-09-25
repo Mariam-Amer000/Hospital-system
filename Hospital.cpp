@@ -16,6 +16,7 @@ void Hospital::Staff_menu()
 
 void Hospital::add_doctor()
 {
+	
 }
 
 void Hospital::add_staff()
