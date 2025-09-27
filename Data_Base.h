@@ -19,9 +19,9 @@ public:
 	void add_patient(Patient p);
 	void add_specialization(string specialization);
 	//remove
-	void remove_doctor(int id);
-	void remove_staff(int id);
-	void remove_patient(int id);
+	void remove_doctor(string id);
+	void remove_staff(string id);
+	void remove_patient(string id);
 	void remove_specialization(string specialization);
 	//display
 	void display_doctors()const;
@@ -29,13 +29,15 @@ public:
 	void display_patient()const;
 	void display_specialization()const;
 	//Search 
-	Doctor Find_doctor(int id);
-	Staff Find_staff(int id);
-	Patient Find_patient(int id);
+	Doctor* Find_doctor(string id);
+	Staff* Find_staff(string id);
+	Patient* Find_patient(string id);
+	string get_specialization(int index);
 	//update 
-	void update_doctor(int id);
-	void update_staff(int id);
-	void update_patient(int id);
-	void update_specialization();
+	void update_doctor(string id);
+	void update_staff(string id);
+	void update_patient(string id);
+	void update_specialization(int index, string new_nam);
+
 };
 

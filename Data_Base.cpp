@@ -1,4 +1,5 @@
 #include "Data_Base.h"
+#include "Hospital.h"
 
 void Data_Base::add_doctor(Doctor d)
 {
@@ -17,9 +18,8 @@ void Data_Base::add_specialization(string specialization)
 	specializations.push_back(specialization);
 }
 
-void Data_Base::remove_doctor(int id)
+void Data_Base::remove_doctor(string id)
 {
-	bool found = 0;
 	if (Doctors.empty())cout << "There is no doctors yet" << endl;
 	else 
 	{
@@ -29,16 +29,15 @@ void Data_Base::remove_doctor(int id)
 			{
 				Doctors.erase(Doctors.begin() + i);
 				cout << "Remove Done for " << id << endl;
-				found = 1;
-				break;
+				return;
 			}
 		}
-		if (!found)cout << "There is no doctor wiht this id : " << id << endl;
+		cout << "There is no doctor wiht this id : " << id << endl;
 	}
 }
-void Data_Base::remove_staff(int id)
+void Data_Base::remove_staff(string id)
 {
-	bool found = 0;
+
 	if (Staffs.empty())cout << "There is no staff yet" << endl;
 	else
 	{
@@ -48,16 +47,14 @@ void Data_Base::remove_staff(int id)
 			{
 				Staffs.erase(Staffs.begin() + i);
 				cout << "Remove Done for " << id << endl;
-				found = 1;
-				break;
+				return;
 			}
 		}
-		if (!found)cout << "There is no Staff wiht this id : " << id << endl;
+		cout << "There is no Staff wiht this id : " << id << endl;
 	}
 }
-void Data_Base::remove_patient(int id)
+void Data_Base::remove_patient(string id)
 {
-	bool found = 0;
 	if (Patients.empty())cout << "There is no Patient yet" << endl;
 	else
 	{
@@ -67,16 +64,14 @@ void Data_Base::remove_patient(int id)
 			{
 				Patients.erase(Patients.begin() + i);
 				cout << "Remove Done for " << id << endl;
-				found = 1;
-				break;
+				return;
 			}
 		}
-		if (!found)cout << "There is no Patient wiht this id : " << id << endl;
+		cout << "There is no Patient wiht this id : " << id << endl;
 	}
 }
 void Data_Base::remove_specialization(string specialization)
 {
-	bool found = 0;
 	if (specializations.empty())cout << "There is no specializations yet" << endl;
 	else
 	{
@@ -86,10 +81,10 @@ void Data_Base::remove_specialization(string specialization)
 			{
 				specializations.erase(specializations.begin() + i);
 				cout << "Remove Done for " << specialization << endl;
-				found = 1;
+				return;
 			}
 		}
-		if (!found)cout << "There is no Specialization with this name: " << specialization << endl;
+		cout << "There is no Specialization with this name: " << specialization << endl;
 	}
 }
 
@@ -135,12 +130,11 @@ void Data_Base::display_specialization() const
 	}
 }
 
-Doctor Data_Base::Find_doctor(int id)
+Doctor* Data_Base::Find_doctor(string id)
 {
-	bool found = 0;
 	if (Doctors.empty()) {
 		cout << "There is no doctors yet" << endl;
-		return Doctor();
+		return nullptr;
 	}
 	else
 	{
@@ -148,47 +142,35 @@ Doctor Data_Base::Find_doctor(int id)
 		{
 			if (Doctors[i].get_national_id() == id)
 			{
-				found = 1;
-				return Doctors[i];
+				return &Doctors[i];
 			}
 		}
-		if (!found) 
-		{ 
-			cout << "There is no doctor wiht this id : " << id << endl;
-			return Doctor();
-		}
 	}
+	return nullptr;
 }
-Staff Data_Base::Find_staff(int id)
+Staff* Data_Base::Find_staff(string id)
 {
-	bool found = 0;
 	if (Staffs.empty()) {
-		cout << "There is no Staff yet" << endl;
-		return Staff();
+		cout << "There is no staff yet" << endl;
+		return nullptr;
 	}
 	else
 	{
 		for (int i = 0; i < Staffs.size(); i++)
 		{
-			if (Staffs[i].get_national_id() == id)
+			if  (Staffs[i].get_national_id() == id)
 			{
-				found = 1;
-				return Staffs[i];
+				return &Staffs[i];
 			}
 		}
-		if (!found)
-		{
-			cout << "There is no Staff wiht this id : " << id << endl;
-			return Staff();
-		}
 	}
+	return nullptr;
 }
-Patient Data_Base::Find_patient(int id)
+Patient* Data_Base::Find_patient(string id)
 {
-	bool found = 0;
 	if (Patients.empty()) {
-		cout << "There is no Patients yet" << endl;
-		return Patient();
+		cout << "There is no staff yet" << endl;
+		return nullptr;
 	}
 	else
 	{
@@ -196,19 +178,17 @@ Patient Data_Base::Find_patient(int id)
 		{
 			if (Patients[i].get_national_id() == id)
 			{
-				found = 1;
-				return Patients[i];
+				return &Patients[i];
 			}
 		}
-		if (!found)
-		{
-			cout << "There is no Patient wiht this id : " << id << endl;
-			return Patient();
-		}
 	}
+	return nullptr;
 }
-
-void Data_Base::update_doctor(int id)
+string Data_Base::get_specialization(int index)
+{
+	return specializations.at(index);
+}
+void Data_Base::update_doctor(string id)
 {
 	bool found = 0;
 	if (Doctors.empty()) {
@@ -231,24 +211,165 @@ void Data_Base::update_doctor(int id)
 		}
 		else 
 		{
-			cout << "choose " << endl;
-			cout << "1- National id" << endl;
-			cout << "2- Name" << endl;
-			cout << "3- Age" << endl;
-			cout << "4- Gender" << endl;
-			cout << "5- salary" << endl;
-			cout << "6- specialization" << endl;
-			cout << "7- max_patient_number" << endl;
-			cout << "8- Haveing access" << endl;
-			cout << "9- Back" << endl;
+			int choise;
+			do
+			{
+				cout << "choose " << endl;
+				cout << "1- National id" << endl;
+				cout << "2- Name" << endl;
+				cout << "3- Age" << endl;
+				cout << "4- Gender" << endl;
+				cout << "5- salary" << endl;
+				cout << "6- specialization" << endl;
+				cout << "7- max_patient_number" << endl;
+				cout << "8- Haveing access" << endl;
+				cout << "0- Back" << endl;
+				cout << "Enter your choice: ";
+				cin >> choise;
+				switch (choise)
+				{
+					case 1:
+					{
+					string new_id;
+					cout << "Enter new id: ";
+					cin >> new_id;
+					for (int i = 0; i < Doctors.size(); i++)
+					{
+						if (Doctors[i].get_national_id() == id)
+						{
+							Doctors[i].set_national_id(new_id);
+							cout << "Update Done" << endl;
+							break;
+						}
+					}
+					break;
+					}
+					case 2:
+					{
+						string new_name;
+						cout << "Enter new name: ";
+						cin >> new_name;
+						for (int i = 0; i < Doctors.size(); i++)
+						{
+							if (Doctors[i].get_national_id() == id)
+							{
+								Doctors[i].set_name(new_name);
+								cout << "Update Done" << endl;
+								break;
+							}
+						}
+						break;
+					}
+					case 3:
+					{
+						int new_age;
+						cout << "Enter new age: ";
+						cin >> new_age;
+						for (int i = 0; i < Doctors.size(); i++)
+						{
+							if (Doctors[i].get_national_id() == id)
+							{
+								Doctors[i].set_age(new_age);
+								cout << "Update Done" << endl;
+								break;
+							}
+						}
+						break;
+					}
+					case 4:
+					{
+						char new_gender;
+						cout << "Enter new age: ";
+						cin >> new_gender;
+						for (int i = 0; i < Doctors.size(); i++)
+						{
+							if (Doctors[i].get_national_id() == id)
+							{
+								Doctors[i].set_gender(new_gender);
+								cout << "Update Done" << endl;
+								break;
+							}
+						}
+						break;
+					}
+					case 5:
+					{
+						double new_salary;
+						cout << "Enter new salary: ";
+						cin >> new_salary;
+						for (int i = 0; i < Doctors.size(); i++)
+						{
+							if (Doctors[i].get_national_id() == id)
+							{
+								Doctors[i].set_salary(new_salary);
+								cout << "Update Done" << endl;
+								break;
+							}
+						}
+						break;
+					}
+					case 6:
+					{
+						string new_specialization;
+						cout << "Enter new specialization: ";
+						cin >> new_specialization;
+						for (int i = 0; i < Doctors.size(); i++)
+						{
+							if (Doctors[i].get_national_id() == id)
+							{
+								Doctors[i].set_specialization(new_specialization);
+								cout << "Update Done" << endl;
+								break;
+							}
+						}
+						break;
+					}
+					case 7:
+					{
+						int new_max_patient_number;
+						cout << "Enter new max_patient_number: ";
+						cin >> new_max_patient_number;
+						for (int i = 0; i < Doctors.size(); i++)
+						{
+							if (Doctors[i].get_national_id() == id)
+							{
+								Doctors[i].set_max_patient_number(new_max_patient_number);
+								cout << "Update Done" << endl;
+								break;
+							}
+						}
+						break;
+					}
+					case 8:
+					{
+						bool new_have_access;
+						cout << "Enter new have_access (1 for true, 0 for false): ";
+						cin >> new_have_access;
+						for (int i = 0; i < Doctors.size(); i++)
+						{
+							if (Doctors[i].get_national_id() == id)
+							{
+								Doctors[i].set_have_access(new_have_access);
+								cout << "Update Done" << endl;
+								break;
+							}
+						}
+						break;
+					}
+					case 0:
+						break;
+				default:
+					break;
+				}
+			} while (choise!=0);
 		}
 	}
 }
 
-void Data_Base::update_staff(int id)
+void Data_Base::update_staff(string id)
 {
 	bool found = 0;
-	if (Doctors.empty()) {
+	if (Staffs.empty()) {
 		cout << "There is no staff yet" << endl;
 		return;
 	}
@@ -268,18 +389,111 @@ void Data_Base::update_staff(int id)
 		}
 		else
 		{
-			cout << "choose " << endl;
-			cout << "1- National id" << endl;
-			cout << "2- Name" << endl;
-			cout << "3- Age" << endl;
-			cout << "4- Gender" << endl;
-			cout << "5- salary" << endl;
-			cout << "6- Back" << endl;
+			int choise;
+			do
+			{
+				cout << "choose " << endl;
+				cout << "1- National id" << endl;
+				cout << "2- Name" << endl;
+				cout << "3- Age" << endl;
+				cout << "4- Gender" << endl;
+				cout << "5- salary" << endl;
+				cout << "0- Back" << endl;
+				cout << "Enter your choice: ";
+				cin >> choise;
+				switch (choise)
+				{
+				case 1:
+				{
+					string new_id;
+					cout << "Enter new id: ";
+					cin >> new_id;
+					for (int i = 0; i < Staffs.size(); i++)
+					{
+						if (Staffs[i].get_national_id() == id)
+						{
+							Staffs[i].set_national_id(new_id);
+							cout << "Update Done" << endl;
+							break;
+						}
+					}
+					break;
+				}
+				case 2:
+				{
+					string new_name;
+					cout << "Enter new name: ";
+					cin >> new_name;
+					for (int i = 0; i < Staffs.size(); i++)
+					{
+						if (Staffs[i].get_national_id() == id)
+						{
+							Staffs[i].set_name(new_name);
+							cout << "Update Done" << endl;
+							break;
+						}
+					}
+					break;
+				}
+				case 3:
+				{
+					int new_age;
+					cout << "Enter new age: ";
+					cin >> new_age;
+					for (int i = 0; i < Staffs.size(); i++)
+					{
+						if (Staffs[i].get_national_id() == id)
+						{
+							Staffs[i].set_age(new_age);
+							cout << "Update Done" << endl;
+							break;
+						}
+					}
+					break;
+				}
+				case 4:
+				{
+					char new_gender;
+					cout << "Enter new age: ";
+					cin >> new_gender;
+					for (int i = 0; i < Staffs.size(); i++)
+					{
+						if (Staffs[i].get_national_id() == id)
+						{
+							Staffs[i].set_gender(new_gender);
+							cout << "Update Done" << endl;
+							break;
+						}
+					}
+					break;
+				}
+				case 5:
+				{
+					double new_salary;
+					cout << "Enter new salary: ";
+					cin >> new_salary;
+					for (int i = 0; i < Staffs.size(); i++)
+					{
+						if (Staffs[i].get_national_id() == id)
+						{
+							Staffs[i].set_salary(new_salary);
+							cout << "Update Done" << endl;
+							break;
+						}
+					}
+					break;
+				}
+				case 0:
+					break;
+				default:
+					break;
+				}
+			} while (choise != 0);
 		}
 	}
 }
 
-void Data_Base::update_patient(int id)
+void Data_Base::update_patient(string id)
 {
 	bool found = 0;
 	if (Patients.empty()) {
@@ -302,23 +516,97 @@ void Data_Base::update_patient(int id)
 		}
 		else
 		{
-			cout << "choose " << endl;
-			cout << "1- National id" << endl;
-			cout << "2- Name" << endl;
-			cout << "3- Age" << endl;
-			cout << "4- Gender" << endl;
-			cout << "5- Back" << endl;
-			//ÇÚÏá ÈÇÞí ÍæÇÕ ÇáãÑíÖ Òí ÇáÊÇÑíÎ ÇáãÑÖí æÇáÑæÔÊå 
+			int choise;
+			do
+			{
+				cout << "choose " << endl;
+				cout << "1- National id" << endl;
+				cout << "2- Name" << endl;
+				cout << "3- Age" << endl;
+				cout << "4- Gender" << endl;
+				cout << "0- Back" << endl;
+				cout << "Enter your choice: ";
+				cin >> choise;
+				switch (choise)
+				{
+				case 1:
+				{
+					string new_id;
+					cout << "Enter new id: ";
+					cin >> new_id;
+					for (int i = 0; i < Patients.size(); i++)
+					{
+						if (Patients[i].get_national_id() == id)
+						{
+							Patients[i].set_national_id(new_id);
+							cout << "Update Done" << endl;
+							break;
+						}
+					}
+					break;
+				}
+				case 2:
+				{
+					string new_name;
+					cout << "Enter new name: ";
+					cin >> new_name;
+					for (int i = 0; i < Patients.size(); i++)
+					{
+						if (Patients[i].get_national_id() == id)
+						{
+							Patients[i].set_name(new_name);
+							cout << "Update Done" << endl;
+							break;
+						}
+					}
+					break;
+				}
+				case 3:
+				{
+					int new_age;
+					cout << "Enter new age: ";
+					cin >> new_age;
+					for (int i = 0; i < Patients.size(); i++)
+					{
+						if (Patients[i].get_national_id() == id)
+						{
+							Patients[i].set_age(new_age);
+							cout << "Update Done" << endl;
+							break;
+						}
+					}
+					break;
+				}
+				case 4:
+				{
+					char new_gender;
+					cout << "Enter new age: ";
+					cin >> new_gender;
+					for (int i = 0; i < Patients.size(); i++)
+					{
+						if (Patients[i].get_national_id() == id)
+						{
+							Patients[i].set_gender(new_gender);
+							cout << "Update Done" << endl;
+							break;
+						}
+					}
+					break;
+				}
+				case 0:
+					break;
+				default:
+					break;
+				}
+			} while (choise != 0);
 		}
 	}
 }
 
-void Data_Base::update_specialization()
+void Data_Base::update_specialization(int index, string new_name)
 {
-	int chooise;
-	display_specialization();
-	cout << "enter the number of the choosen one" << endl;
-	cin >> chooise;
-	cout << "enter the new name";
-	cin >> specializations.at(chooise - 1);
+	specializations.at(index) = new_name;
 }
+
+
+

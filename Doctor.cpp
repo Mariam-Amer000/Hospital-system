@@ -70,7 +70,7 @@ Doctor::Doctor()
 {
 }
 
-Doctor::Doctor(string name, int age, int id, char gender, double salary, bool have_access, string specialization, int max_patient_number)
+Doctor::Doctor(string name, int age, string id, char gender, double salary, bool have_access, string specialization, int max_patient_number)
     :Employee(name,age,id,gender,salary,  have_access),specialization(specialization)
 {
     set_max_patient_number(max_patient_number);

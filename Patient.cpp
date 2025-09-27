@@ -32,7 +32,7 @@ Patient::Patient()
 {
 }
 
-Patient::Patient(string name, int age, int id, char gender): Person(name, age, id, gender)
+Patient::Patient(string name, int age, string id, char gender): Person(name, age, id, gender)
 {
 }
 

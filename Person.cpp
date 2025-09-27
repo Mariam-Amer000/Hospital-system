@@ -45,14 +45,15 @@ void Person::set_age(int age)
     else { this->age = 0; }
 }
 
-void Person::set_national_id(int national_id)
+void Person::set_national_id(string national_id)
 {
     this->national_id = national_id;
 }
 
 void Person::set_gender(char gender)
 {
-    this->gender = gender;
+    if (gender != 'f' || gender != 'F' || gender != 'm' || gender != 'M')this->gender = '0';
+    else this->gender = gender;
 }
 
 string Person::get_name()const
@@ -65,7 +66,7 @@ int Person::get_age()const
     return age;
 }
 
-int Person::get_national_id()const
+string Person::get_national_id()const
 {
     return national_id;
 }
@@ -87,7 +88,7 @@ Person::Person()
 {
 }
 
-Person::Person(string name, int age, int id, char gender) : national_id(id), gender(gender)
+Person::Person(string name, int age, string id, char gender) : national_id(id), gender(gender)
 {
     //should implement validation here 
     set_name(name);

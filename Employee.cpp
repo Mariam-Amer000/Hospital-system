@@ -2,7 +2,7 @@
 
 void Employee::set_salary(double salary)
 {
-    if (salary < 2000) {
+    if (salary < 5000) {
         this->salary = 0;
     }
     else this->salary = salary;
@@ -33,7 +33,7 @@ Employee::Employee()
 {
 }
 
-Employee::Employee(string name, int age, int id, char gender, double salary, bool have_access) :Person(name, age, id, gender), have_access(have_access)
+Employee::Employee(string name, int age, string id, char gender, double salary, bool have_access) :Person(name, age, id, gender), have_access(have_access)
 {
     set_salary(salary);
 }

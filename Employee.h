@@ -15,6 +15,6 @@ public:
 	void display() const override ;
 
 	Employee();
-	Employee(string name, int age, int id, char gender,double salary,bool have_access);
+	Employee(string name, int age, string id, char gender,double salary,bool have_access);
 };
 

@@ -127,6 +127,7 @@
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="Hospital System.cpp" />
+    <ClCompile Include="Hospital.cpp" />
     <ClCompile Include="Medical_Record.cpp" />
     <ClCompile Include="Patient.cpp" />
     <ClCompile Include="Person.cpp" />
@@ -136,6 +137,7 @@
     <ClInclude Include="Data_Base.h" />
     <ClInclude Include="Doctor.h" />
     <ClInclude Include="Employee.h" />
+    <ClInclude Include="Hospital.h" />
     <ClInclude Include="Medical_Record.h" />
     <ClInclude Include="Patient.h" />
     <ClInclude Include="Person.h" />

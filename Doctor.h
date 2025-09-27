@@ -23,7 +23,7 @@ public:
     void add_patient_queue(int patient_id);
     void remove_patient_queue();
     Doctor();
-    Doctor(string name, int age, int id, char gender, double salary, bool have_access,string specialization ,int max_patient_number);
+    Doctor(string name, int age, string id, char gender, double salary, bool have_access,string specialization ,int max_patient_number);
     ~Doctor();
 };
 

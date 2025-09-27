@@ -14,7 +14,7 @@ public:
     void display()const override;
     void show_last_visit();
     Patient();
-    Patient(string name, int age, int id, char gender);
+    Patient(string name, int age, string id, char gender);
     ~Patient();
 };
 
