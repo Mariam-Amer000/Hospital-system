@@ -31,6 +31,11 @@ int Doctor::get_patient_number()const
     return patient_number;
 }
 
+int Doctor::get_current_patient_id() const
+{
+    return patient_ids.back();
+}
+
 void Doctor::display() const
 {
     Employee::display();

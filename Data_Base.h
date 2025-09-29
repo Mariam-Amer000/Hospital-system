@@ -26,8 +26,8 @@ public:
 	//display
 	void display_doctors()const;
 	void display_staff()const;
-	void display_patient()const;
-	void display_specialization()const;
+	void display_patients()const;
+	void display_specializations()const;
 	//Search 
 	Doctor* Find_doctor(string id);
 	Staff* Find_staff(string id);

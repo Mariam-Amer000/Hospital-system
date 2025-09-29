@@ -18,6 +18,7 @@ public:
     int get_max_patient_number()const;
     string get_specialization()const;
     int get_patient_number()const;
+    int get_current_patient_id()const;
     //other
     void display()const override;
     void add_patient_queue(int patient_id);

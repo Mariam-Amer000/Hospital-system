@@ -13,8 +13,9 @@ void Hospital::main_menu()
 void Hospital::Doctor_menu()
 {
 	cout << "Doctor Menu" << endl;
-	cout << "1- show Doctor information" << endl;
-	cout << "2- show current patient number" << endl;
+	cout << "1-  Doctor information" << endl;
+	cout << "2- current patients number" << endl;
+	cout << "3-  current patient history" << endl;
 	cout << "0- Back to the main menu" << endl;
 }
 
@@ -125,7 +126,7 @@ void Hospital::add_doctor()
 		} while (d.get_salary() == 0);
 
 		cout << "Choose specialization: ";
-		db.display_specialization();
+		db.display_specializations();
 		cin >> chooise;
 		d.set_specialization(db.get_specialization(chooise - 1));
 
@@ -282,6 +283,7 @@ void Hospital::add_specialization()
 	cin >> specialization;
 	db.add_specialization(specialization);
 }
+
 void Hospital::remove_doctor()
 {
 	string national_id;
@@ -309,35 +311,11 @@ void Hospital::remove_staff()
 void Hospital::remove_specialization()
 {
 	cout << "choose specialization to remove: " << endl;
-	db.display_specialization();
+	db.display_specializations();
 	int chooise;
 	cin >> chooise;
 	string specialization = db.get_specialization(chooise - 1);
 	db.remove_specialization(specialization);
-}
-
-void Hospital::update_doctor()
-{
-	string national_id;
-	cout << "Enter doctor national ID to update: ";
-	cin >> national_id;
-	db.update_doctor(national_id);
-}
-
-void Hospital::update_staff()
-{
-	string national_id;
-	cout << "Enter staff national ID to update: ";
-	cin >> national_id;
-	db.update_staff(national_id);
-}
-
-void Hospital::update_patient()
-{
-	string national_id;
-	cout << "Enter patient national ID to update: ";
-	cin >> national_id;
-	db.update_patient(national_id);
 }
 void Hospital::show_all_doctors()
 {
@@ -351,60 +329,33 @@ void Hospital::show_all_staff()
 
 void Hospital::show_all_patient()
 {
-	db.display_patient();
+	db.display_patients();
 }
 
 void Hospital::show_all_specialization()
 {
-	db.display_specialization();
+	db.display_specializations();
 }
 
-void Hospital::find_doctor()
+Doctor* Hospital::find_doctor(string national_id)
 {
-	string national_id;
-	cout << "Enter doctor national ID to find: ";
-	cin >> national_id;
 	Doctor* d = db.Find_doctor(national_id);
-	if (d) {
-		d->display();
-	}
-	else
-	{
-		cout << "There is no doctor with this ID" << endl;
-	}
+	return d;
 }
 
-void Hospital::find_staff()
+Staff* Hospital::find_staff(string national_id)
 {
-	string national_id;
-	cout << "Enter staff national ID to find: ";
-	cin >> national_id;
 	Staff* s = db.Find_staff(national_id);
-	if (s) {
-		s->display();
-	}
-	else
-	{
-		cout << "There is no staff with this ID" << endl;
-	}
+	return s;
 }
 
-void Hospital::find_patient()
+Patient* Hospital::find_patient(string national_id)
 {
-	string national_id;
-	cout << "Enter patient national ID to find: ";
-	cin >> national_id;
 	Patient* p = db.Find_patient(national_id);
-	if (p) {
-		p->display();
-	}
-	else
-	{
-		cout << "There is no patient with this ID" << endl;
-	}
+	return p;
 }
 
-void Hospital::update_doctor()
+void Hospital::update_Doctor()
 {
 	string national_id;
 	cout << "Enter doctor national ID to update: ";
@@ -412,7 +363,7 @@ void Hospital::update_doctor()
 	db.update_doctor(national_id);
 }
 
-void Hospital::update_staff()
+void Hospital::update_Staff()
 {
 	string national_id;
 	cout << "Enter staff national ID to update: ";
@@ -420,7 +371,7 @@ void Hospital::update_staff()
 	db.update_staff(national_id);
 }
 
-void Hospital::update_patient()
+void Hospital::update_Patient()
 {
 	string national_id;
 	cout << "Enter patient national ID to update: ";
@@ -428,11 +379,11 @@ void Hospital::update_patient()
 	db.update_patient(national_id);
 }
 
-void Hospital::update_specialization()
+void Hospital::update_Specialization()
 {
 	int chooise;
 	string new_name;
-	db.display_specialization();
+	db.display_specializations();
 	cout << "enter the number of the choosen one";
 	cin >> chooise;
 	cout << "Enter the new name";

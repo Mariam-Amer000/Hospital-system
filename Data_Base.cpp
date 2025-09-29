@@ -108,7 +108,7 @@ void Data_Base::display_staff() const
 		}
 	}
 }
-void Data_Base::display_patient() const
+void Data_Base::display_patients() const
 {
 	if (Patients.empty())cout << "There is no Patients yet" << endl;
 	else
@@ -118,7 +118,7 @@ void Data_Base::display_patient() const
 		}
 	}
 }
-void Data_Base::display_specialization() const
+void Data_Base::display_specializations() const
 {
 	if (specializations.empty())cout << "There is no specializations yet" << endl;
 	else
@@ -133,7 +133,6 @@ void Data_Base::display_specialization() const
 Doctor* Data_Base::Find_doctor(string id)
 {
 	if (Doctors.empty()) {
-		cout << "There is no doctors yet" << endl;
 		return nullptr;
 	}
 	else
@@ -151,7 +150,6 @@ Doctor* Data_Base::Find_doctor(string id)
 Staff* Data_Base::Find_staff(string id)
 {
 	if (Staffs.empty()) {
-		cout << "There is no staff yet" << endl;
 		return nullptr;
 	}
 	else
@@ -169,7 +167,6 @@ Staff* Data_Base::Find_staff(string id)
 Patient* Data_Base::Find_patient(string id)
 {
 	if (Patients.empty()) {
-		cout << "There is no staff yet" << endl;
 		return nullptr;
 	}
 	else
