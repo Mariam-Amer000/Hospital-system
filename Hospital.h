@@ -6,6 +6,7 @@ class Hospital
 {
 private:
 	Data_Base db;
+	Data_manager dm;
 public:
 	//menu
 	void main_menu();
@@ -15,10 +16,10 @@ public:
 	void Staff_HUB();
 	void Patient_HUB();
 	//add
-	void add_doctor();
-	void add_staff();
-	void add_patient();
-	void add_specialization();
+	Doctor add_doctor();
+	Staff add_staff();
+	Patient add_patient();
+	string add_specialization();
 	//remove
 	void remove_doctor();
 	void remove_patient();

@@ -4,6 +4,7 @@
 #include"Doctor.h"
 #include"Patient.h"
 #include"Staff.h"
+#include"Data_manager.h"
 using namespace std;
 class Data_Base
 {

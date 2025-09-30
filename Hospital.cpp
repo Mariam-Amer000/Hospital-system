@@ -59,7 +59,7 @@ void Hospital::Patient_HUB()
 	cout << "0- Back to the main menu" << endl;
 }
 
-void Hospital::add_doctor()
+Doctor Hospital::add_doctor()
 {
 	string name,  national_id;
 	int age, max_patient_number, chooise,patient_number = 0;
@@ -141,11 +141,12 @@ void Hospital::add_doctor()
 		cin >> have_access;
 		d.set_have_access(have_access);
 		db.add_doctor(d);
+		dm.save_doctor(d, "doctors.txt");
 	}
-	
+	return d;
 }
 
-void Hospital::add_staff()
+Staff Hospital::add_staff()
 {
 	string name, national_id;
 	int age;
@@ -214,10 +215,10 @@ void Hospital::add_staff()
 		s.set_have_access(have_access);
 		db.add_staff(s);
 	}
-
+	return s;
 }
 
-void Hospital::add_patient()
+Patient Hospital::add_patient()
 {
 	string name, national_id;
 	int age;
@@ -274,14 +275,15 @@ void Hospital::add_patient()
 		} while (p.get_gender() == '0');
 		db.add_patient(p);
 	}
-
+	return p;
 }
-void Hospital::add_specialization()
+string Hospital::add_specialization()
 {
 	string specialization;
 	cout << "Enter new specialization: ";
 	cin >> specialization;
 	db.add_specialization(specialization);
+	return specialization;
 }
 
 void Hospital::remove_doctor()
@@ -389,4 +391,9 @@ void Hospital::update_Specialization()
 	cout << "Enter the new name";
 	cin >> new_name;
 	db.update_specialization(chooise - 1, new_name);
+}
+
+void Hospital::load_data()
+{
+	
 }

@@ -5,6 +5,7 @@ using namespace std;
 int main()
 {
 	Hospital h;
+	h.load_data();
 	int main_chooise;
 	do
 	{
@@ -107,6 +108,7 @@ int main()
 						case 3:
 						{
 							h.Patient_HUB();
+							break;
 						}
 						case 0: 
 							break;

@@ -124,6 +124,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Data_Base.cpp" />
+    <ClCompile Include="Data_manager.cpp" />
     <ClCompile Include="Doctor.cpp" />
     <ClCompile Include="Employee.cpp" />
     <ClCompile Include="Hospital System.cpp" />
@@ -135,6 +136,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Data_Base.h" />
+    <ClInclude Include="Data_manager.h" />
     <ClInclude Include="Doctor.h" />
     <ClInclude Include="Employee.h" />
     <ClInclude Include="Hospital.h" />
@@ -148,6 +150,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Doctors.txt" />
+    <Text Include="Patients.txt" />
+    <Text Include="Specializations.txt" />
+    <Text Include="Staff.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

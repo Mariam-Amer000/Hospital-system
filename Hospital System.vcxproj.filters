@@ -42,6 +42,9 @@
     <ClCompile Include="Hospital.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Data_manager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Person.h">
@@ -68,6 +71,9 @@
     <ClInclude Include="Hospital.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Data_manager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Hospital_System_UML.png">
@@ -76,5 +82,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Patients.txt" />
+    <Text Include="Specializations.txt" />
+    <Text Include="Staff.txt" />
+    <Text Include="Doctors.txt" />
   </ItemGroup>
 </Project>
