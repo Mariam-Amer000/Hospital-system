@@ -5,9 +5,9 @@ void Data_manager::save_doctor(Doctor d, string file_name)
 	ofstream file(file_name, ios::app);
 	if (file.is_open()) 
 	{
-		file << d.get_national_id() << ","
-			<< d.get_name() << "," 
+		file << d.get_name() << ","
 			<< d.get_age() << "," 
+			<< d.get_national_id() << ","
 			<< d.get_gender() << "," 
 			<< d.get_salary() << "," 
 			<< d.get_access() << "," 
@@ -26,9 +26,9 @@ void Data_manager::save_staff(Staff s, string file_name)
 	ofstream file(file_name, ios::app);
 	if (file.is_open()) 
 	{
-		file << s.get_national_id() << ","
-			<< s.get_name() << ","
+		file << s.get_name() << ","
 			<< s.get_age() << ","
+			<< s.get_national_id() << ","
 			<< s.get_gender() << ","
 			<< s.get_salary() << ","
 			<< s.get_access() << "," << endl;
@@ -44,9 +44,9 @@ void Data_manager::save_patient(Patient p, string file_name)
 	ofstream file(file_name, ios::app);
 	if (file.is_open())
 	{
-		file << p.get_national_id() << ","
-			<< p.get_name() << ","
+		file << p.get_name() << ","
 			<< p.get_age() << ","
+			<< p.get_national_id() << ","
 			<< p.get_gender() << "," << endl;
 	}
 	else
@@ -81,9 +81,9 @@ void Data_manager::load_doctors(vector<Doctor> &Doctors_list, string file_name)
 			string name, national_id, age_str, gender_str, salary_str, access_str,
 				   specialization, max_patient_number_str, patient_number_str;
 
-			getline(ss, national_id, ','); //string
 			getline(ss, name, ','); //string
 			getline(ss, age_str, ','); //int
+			getline(ss, national_id, ','); //string
 			getline(ss, gender_str, ','); //char
 			getline(ss, salary_str, ',');	//double
 			getline(ss, access_str, ',');//bool
@@ -119,9 +119,9 @@ void Data_manager::load_staffs(vector<Staff> &Staffs_list, string file_name)
 			stringstream ss(line);
 			string name, national_id, age_str, gender_str, salary_str, access_str;
 
-			getline(ss, national_id, ','); //string
 			getline(ss, name, ','); //string
 			getline(ss, age_str, ','); //int
+			getline(ss, national_id, ','); //string
 			getline(ss, gender_str, ','); //char
 			getline(ss, salary_str, ',');	//double
 			getline(ss, access_str, ',');//bool
@@ -150,10 +150,9 @@ void Data_manager::load_patients(vector<Patient> &Patients_list, string file_nam
 		{
 			stringstream ss(line);
 			string name, national_id, age_str, gender_str;
-
-			getline(ss, national_id, ','); //string
 			getline(ss, name, ','); //string
 			getline(ss, age_str, ','); //int
+			getline(ss, national_id, ','); //string
 			getline(ss, gender_str, ','); //char
 
 			int age = stoi(age_str);;

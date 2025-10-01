@@ -393,7 +393,11 @@ void Hospital::update_Specialization()
 	db.update_specialization(chooise - 1, new_name);
 }
 
-void Hospital::load_data()
+void Hospital::load_all()
 {
-	
+	db.load_Specializations();
+	db.load_Doctors();
+	db.load_Staffs();
+	db.load_Patients();
 }
+

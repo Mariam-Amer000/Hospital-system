@@ -13,6 +13,7 @@ private:
 	vector<Staff>Staffs;
 	vector<Patient>Patients;
 	vector<string>specializations;
+	Data_manager dm;
 public:
 	//add
 	void add_doctor(Doctor d);
@@ -39,6 +40,11 @@ public:
 	void update_staff(string id);
 	void update_patient(string id);
 	void update_specialization(int index, string new_nam);
+	//load
+	void load_Doctors();
+	void load_Staffs();
+	void load_Patients();
+	void load_Specializations();
 
 };
 

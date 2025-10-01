@@ -605,6 +605,26 @@ void Data_Base::update_specialization(int index, string new_name)
 	specializations.at(index) = new_name;
 }
 
+void Data_Base::load_Doctors()
+{
+	dm.load_doctors(Doctors,"Doctors.txt");
+}
+
+void Data_Base::load_Staffs()
+{
+	dm.load_staffs(Staffs, "Staff.txt");
+}
+
+void Data_Base::load_Patients()
+{
+	dm.load_patients(Patients, "Patient.txt");
+}
+
+void Data_Base::load_Specializations()
+{
+	dm.load_specializations(specializations, "Specialization.txt");
+}
+
 
 
 

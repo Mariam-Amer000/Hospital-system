@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
 	Hospital h;
-	h.load_data();
+	h.load_all();
 	int main_chooise;
 	do
 	{

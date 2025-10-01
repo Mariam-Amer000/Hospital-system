@@ -39,4 +39,6 @@ public:
 	void update_Staff();
 	void update_Patient();
 	void update_Specialization();
+	//load 
+	void load_all();
 };
