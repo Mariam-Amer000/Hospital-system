@@ -99,7 +99,7 @@ int main()
 						cin >> staff_chooise;
 						switch (staff_chooise) 
 						{
-						case 1:
+						case 1: // Doctor HUB
 						{
 							int choiseDH;
 							do
@@ -128,7 +128,16 @@ int main()
 									{
 										string national_id;
 										cin >> national_id;
-										h.find_doctor(national_id);
+										Doctor* d = h.find_doctor(national_id);
+										if (d)d->display();
+										else cout << "there is no doctor with that id" << endl;
+										break;
+									}
+									case 5: // show all doctors
+									{
+										system("cls");
+										h.show_all_doctors();
+										Sleep(5000);
 										break;
 									}
 									case 0: 
@@ -139,14 +148,106 @@ int main()
 							
 							break;
 						}
-						case 2:
+						case 2:// Staff HUB
 						{
-							h.Staff_HUB();
+							int choiseSH;
+							do
+							{
+								h.Staff_HUB();	
+								cin >> choiseSH;
+								switch (choiseSH)
+								{
+									case 1: // add staff
+									{
+										system("cls");
+										h.add_staff();
+										break;
+									}
+									case 2: // remove staff
+									{
+										system("cls");
+										h.remove_staff();
+										break;
+									}
+									case 3: // update staff
+									{
+										system("cls");
+										h.update_Staff();
+										break;
+									}
+									case 4: // find staff
+									{
+										system("cls");
+										string national_id;
+										cin >> national_id;
+										Staff* s = h.find_staff(national_id);
+										if (s)s->display();
+										else cout << "there is no Staff with that id" << endl;
+										break;
+									}
+									case 5: // show all staff
+									{
+										system("cls");
+										h.show_all_staff();
+										Sleep(5000);
+										break;
+									}
+									case 0:
+									default:
+										break;
+								}
+							} while (choiseSH!=0);
 							break;
 						}
 						case 3:
 						{
-							h.Patient_HUB();
+							int choisePH;
+							do
+							{
+								h.Patient_HUB();
+								cin >> choisePH;
+								switch (choisePH) 
+								{
+									case 1: // add patient
+									{
+										system("cls");
+										h.add_patient();
+										break;
+									}
+									case 2: // remove patient
+									{
+										system("cls");
+										h.remove_patient();
+										break;
+									}
+									case 3: // update patient
+									{
+										system("cls");
+										h.update_Patient();
+										break;
+									}
+									case 4: // find patient
+									{
+										system("cls");
+										string national_id;
+										cin >> national_id;
+										Patient* p = h.find_patient(national_id);
+										if (p)p->display();
+										else cout << "there is no Patient with that id" << endl;
+										break;
+									}
+									case 5: // show all patient
+									{
+										system("cls");
+										h.show_all_patient();
+										Sleep(5000);
+										break;
+									}
+									case 0:
+								default:
+									break;
+								}
+							} while (choisePH);
 							break;
 						}
 						case 4:

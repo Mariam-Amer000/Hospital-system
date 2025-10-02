@@ -34,6 +34,7 @@ void Hospital::Doctor_HUB()
 	cout << "2- Remove Doctor" << endl;
 	cout << "3- Update Doctor" << endl;
 	cout << "4- Find Doctor" << endl;
+	cout << "5- show all Doctors" << endl;
 	cout << "0- Back to the main menu" << endl;
 }
 void Hospital::Staff_HUB()
@@ -43,6 +44,7 @@ void Hospital::Staff_HUB()
 	cout << "2- Remove Staff" << endl;
 	cout << "3- Update Staff" << endl;
 	cout << "4- Find Staff" << endl;
+	cout << "5- show all Staffs" << endl;
 	cout << "0- Back to the main menu" << endl;
 }
 void Hospital::Patient_HUB()
@@ -52,6 +54,7 @@ void Hospital::Patient_HUB()
 	cout << "2- Remove Patien" << endl;
 	cout << "3- Update Patien" << endl;
 	cout << "4- Find Patienf" << endl;
+	cout << "5- show all Patients" << endl;
 	cout << "0- Back to the main menu" << endl;
 }
 void Hospital::Specialization_HUB()
@@ -150,7 +153,6 @@ Doctor Hospital::add_doctor()
 	}
 	return d;
 }
-
 Staff Hospital::add_staff()
 {
 	string name, national_id;
@@ -222,7 +224,6 @@ Staff Hospital::add_staff()
 	}
 	return s;
 }
-
 Patient Hospital::add_patient()
 {
 	string name, national_id;
@@ -300,7 +301,6 @@ void Hospital::remove_doctor()
 	cin >> national_id;	
 	db.remove_doctor(national_id);
 }
-
 void Hospital::remove_patient()
 {
 	string	national_id;
@@ -308,7 +308,6 @@ void Hospital::remove_patient()
 	cin >> national_id;
 	db.remove_patient(national_id);
 }
-
 void Hospital::remove_staff()
 {
 	string national_id;
@@ -316,7 +315,6 @@ void Hospital::remove_staff()
 	cin >> national_id;
 	db.remove_staff(national_id);
 }
-
 void Hospital::remove_specialization()
 {
 	cout << "choose specialization to remove: " << endl;
@@ -326,21 +324,19 @@ void Hospital::remove_specialization()
 	string specialization = db.get_specialization(chooise - 1);
 	db.remove_specialization(specialization);
 }
+
 void Hospital::show_all_doctors()
 {
 	db.display_doctors();
 }
-
 void Hospital::show_all_staff()
 {
 	db.display_staff();
 }
-
 void Hospital::show_all_patient()
 {
 	db.display_patients();
 }
-
 void Hospital::show_all_specialization()
 {
 	db.display_specializations();
@@ -351,43 +347,263 @@ Doctor* Hospital::find_doctor(string national_id)
 	Doctor* d = db.Find_doctor(national_id);
 	return d;
 }
-
 Staff* Hospital::find_staff(string national_id)
 {
 	Staff* s = db.Find_staff(national_id);
 	return s;
 }
-
 Patient* Hospital::find_patient(string national_id)
 {
 	Patient* p = db.Find_patient(national_id);
 	return p;
 }
 
-void Hospital::update_Doctor()
+void Hospital::update_Doctor() //åíÓãÚ Úáì Øæá Ýí ÇáÏÇÊÇ ÈíÒ ãä ÛíÑ ãÇ ÇÚãá ÌæÇåÇ ÊÚÏíá ÊÇäí 
 {
 	string national_id;
 	cout << "Enter doctor national ID to update: ";
 	cin >> national_id;
-	db.update_doctor(national_id);
+	Doctor* found = find_doctor(national_id);
+	if (found)
+	{
+		int choise;
+		do
+		{
+			cout << "choose " << endl;
+			cout << "1- National id" << endl;
+			cout << "2- Name" << endl;
+			cout << "3- Age" << endl;
+			cout << "4- Gender" << endl;
+			cout << "5- salary" << endl;
+			cout << "6- specialization" << endl;
+			cout << "7- max_patient_number" << endl;
+			cout << "8- Haveing access" << endl;
+			cout << "0- Back" << endl;
+			cout << "Enter your choice: ";
+			cin >> choise;
+			switch (choise) 
+			{
+			case 1:
+			{
+				string new_id;
+				cout << "Enter new id: ";
+				cin >> new_id;
+				found->set_national_id(new_id);
+				break;
+			}
+			case 2:
+			{
+				string new_name;
+				cout << "Enter new name: ";
+				cin >> new_name;
+				found->set_name(new_name);
+				break;
+			}
+			case 3:
+			{
+				int new_age;
+				cout << "Enter new age: ";
+				cin >> new_age;
+				found->set_age(new_age);
+				break;
+			}
+			case 4:
+			{
+				char new_gender;
+				cout << "Enter new age: ";
+				cin >> new_gender;
+				found->set_gender(new_gender);
+				break;
+			}
+			case 5:
+			{
+				double new_salary;
+				cout << "Enter new salary: ";
+				cin >> new_salary;
+				found->set_salary(new_salary);
+				break;
+			}
+			case 6:
+			{
+				string new_specialization;
+				cout << "Enter new specialization: ";
+				cin >> new_specialization;
+				found->set_specialization(new_specialization);
+				break;
+			}
+			case 7:
+			{
+				int new_max_patient_number;
+				cout << "Enter new max_patient_number: ";
+				cin >> new_max_patient_number;
+				found->set_max_patient_number(new_max_patient_number);
+				break;
+			}
+			case 8:
+			{
+				bool new_have_access;
+				cout << "Enter new have_access (1 for true, 0 for false): ";
+				cin >> new_have_access;
+				found->set_have_access(new_have_access);
+				break;
+			}
+			case 0:
+			default :
+				break;
+			}
+		} while (choise != 0);
+	}
+	else 
+	{
+		cout << "Doctor not found" << endl;
+	}
 }
-
 void Hospital::update_Staff()
 {
 	string national_id;
-	cout << "Enter staff national ID to update: ";
+	cout << "Enter doctor national ID to update: ";
 	cin >> national_id;
-	db.update_staff(national_id);
+	Doctor* found = find_doctor(national_id);
+	if (found)
+	{
+		int choise;
+		do
+		{
+			cout << "choose " << endl;
+			cout << "1- National id" << endl;
+			cout << "2- Name" << endl;
+			cout << "3- Age" << endl;
+			cout << "4- Gender" << endl;
+			cout << "5- salary" << endl;
+			cout << "6- Haveing access" << endl;
+			cout << "0- Back" << endl;
+			cout << "Enter your choice: ";
+			cin >> choise;
+			switch (choise)
+			{
+			case 1:
+			{
+				string new_id;
+				cout << "Enter new id: ";
+				cin >> new_id;
+				found->set_national_id(new_id);
+				break;
+			}
+			case 2:
+			{
+				string new_name;
+				cout << "Enter new name: ";
+				cin >> new_name;
+				found->set_name(new_name);
+				break;
+			}
+			case 3:
+			{
+				int new_age;
+				cout << "Enter new age: ";
+				cin >> new_age;
+				found->set_age(new_age);
+				break;
+			}
+			case 4:
+			{
+				char new_gender;
+				cout << "Enter new age: ";
+				cin >> new_gender;
+				found->set_gender(new_gender);
+				break;
+			}
+			case 5:
+			{
+				double new_salary;
+				cout << "Enter new salary: ";
+				cin >> new_salary;
+				found->set_salary(new_salary);
+				break;
+			}
+			case 6:
+			{
+				bool new_have_access;
+				cout << "Enter new have_access (1 for true, 0 for false): ";
+				cin >> new_have_access;
+				found->set_have_access(new_have_access);
+				break;
+			}
+			case 0:
+			default:
+				break;
+			}
+		} while (choise != 0);
+	}
+	else
+	{
+		cout << "Staff not found" << endl;
+	}
 }
-
 void Hospital::update_Patient()
 {
 	string national_id;
-	cout << "Enter patient national ID to update: ";
+	cout << "Enter doctor national ID to update: ";
 	cin >> national_id;
-	db.update_patient(national_id);
+	Doctor* found = find_doctor(national_id);
+	if (found)
+	{
+		int choise;
+		do
+		{
+			cout << "choose " << endl;
+			cout << "1- National id" << endl;
+			cout << "2- Name" << endl;
+			cout << "3- Age" << endl;
+			cout << "4- Gender" << endl;
+			cout << "0- Back" << endl;
+			cout << "Enter your choice: ";
+			cin >> choise;
+			switch (choise)
+			{
+			case 1:
+			{
+				string new_id;
+				cout << "Enter new id: ";
+				cin >> new_id;
+				found->set_national_id(new_id);
+				break;
+			}
+			case 2:
+			{
+				string new_name;
+				cout << "Enter new name: ";
+				cin >> new_name;
+				found->set_name(new_name);
+				break;
+			}
+			case 3:
+			{
+				int new_age;
+				cout << "Enter new age: ";
+				cin >> new_age;
+				found->set_age(new_age);
+				break;
+			}
+			case 4:
+			{
+				char new_gender;
+				cout << "Enter new age: ";
+				cin >> new_gender;
+				found->set_gender(new_gender);
+				break;
+			}
+			case 0:
+			default:
+				break;
+			}
+		} while (choise != 0);
+	}
+	else
+	{
+		cout << "Staff not found" << endl;
+	}
 }
-
 void Hospital::update_Specialization()
 {
 	int chooise;

@@ -36,9 +36,9 @@ public:
 	Patient* Find_patient(string id);
 	string get_specialization(int index);
 	//update 
-	void update_doctor(string id);
-	void update_staff(string id);
-	void update_patient(string id);
+	//void update_doctor(string id);
+	//void update_staff(string id);
+	//void update_patient(string id);
 	void update_specialization(int index, string new_nam);
 	//load
 	void load_Doctors();
