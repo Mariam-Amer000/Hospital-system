@@ -622,7 +622,7 @@ void Data_Base::load_Patients()
 
 void Data_Base::load_Specializations()
 {
-	dm.load_specializations(specializations, "Specialization.txt");
+	dm.load_specializations(specializations, "Specializations.txt");
 }
 
 

@@ -1,14 +1,4 @@
 #include "Person.h"
-
-//void Person::set_name(string name)
-//{
-// ÇáİßÑå ßæíÓå ÈÓ áæ ÇáãÓÊÎÏã ÏÎá ãÓÇİå İí ÇáÇæá Çæ ÇáÇÎÑÇæ ÍÊì áæ ÇÓÊÎÏã ÇßÊÑ ãä ãÓÇİå Èíä ÇáßáãÇÊ ÇáÏäíÇ åÊÈæÙ
-//    int word_count = 1;
-//    for (char letter : name)
-//    {
-//        if (isspace(letter))word_count++;
-//    }
-//}
 void Person::set_name(string name)
 {
     //ÇÊÇßÏäÇ Çä ÇáÇÓã ÑÈÇÚí æßãÇä ßá ÇÓã ãä ÇáÇÑÈÚå Èíäå æÈíä ÇáÊÇäí ãÓÇİå æÇÍÏå ÈÓ
@@ -38,7 +28,6 @@ void Person::set_name(string name)
     if (word_count == 4)this->name = full_name;
     else this->name = "0";
 }
-//mariam mohamed ali ali 
 void Person::set_age(int age)
 {
     if (age >= 0 && age <= 120) { this->age = age; }
@@ -52,8 +41,8 @@ void Person::set_national_id(string national_id)
 
 void Person::set_gender(char gender)
 {
-    if (gender != 'f' || gender != 'F' || gender != 'm' || gender != 'M')this->gender = '0';
-    else this->gender = gender;
+    if (gender == 'f' || gender == 'F' || gender == 'm' || gender == 'M')this->gender = gender;
+    else this->gender = '0';
 }
 
 string Person::get_name()const

@@ -9,26 +9,24 @@ void Hospital::main_menu()
 	cout << "2- Staff" << endl;
 	cout << "0- Exit" << endl;
 }
-
 void Hospital::Doctor_menu()
 {
 	cout << "Doctor Menu" << endl;
-	cout << "1-  Doctor information" << endl;
+	cout << "1- Doctor information" << endl;
 	cout << "2- current patients number" << endl;
-	cout << "3-  current patient history" << endl;
+	cout << "3- current patient history" << endl;
 	cout << "0- Back to the main menu" << endl;
 }
-
 void Hospital::Staff_menu()
 {
 	cout << "Staff Menu" << endl;
 	cout << "1- Doctor HUP" << endl;
 	cout << "2- Staff HUP" << endl;
 	cout << "3- Patient HUP" << endl;
+	cout << "4- Specialization HUP" << endl;
 	cout << "0- Back to the main menu" << endl;
 
 }
-
 void Hospital::Doctor_HUB()
 {
 	cout << "Doctor HUB" << endl;
@@ -38,7 +36,6 @@ void Hospital::Doctor_HUB()
 	cout << "4- Find Doctor" << endl;
 	cout << "0- Back to the main menu" << endl;
 }
-
 void Hospital::Staff_HUB()
 {
 	cout << "Staff HUB" << endl;
@@ -48,7 +45,6 @@ void Hospital::Staff_HUB()
 	cout << "4- Find Staff" << endl;
 	cout << "0- Back to the main menu" << endl;
 }
-
 void Hospital::Patient_HUB()
 {
 	cout << "Patien HUB" << endl;
@@ -56,6 +52,15 @@ void Hospital::Patient_HUB()
 	cout << "2- Remove Patien" << endl;
 	cout << "3- Update Patien" << endl;
 	cout << "4- Find Patienf" << endl;
+	cout << "0- Back to the main menu" << endl;
+}
+void Hospital::Specialization_HUB()
+{
+	cout<< "Specialization HUB" << endl;
+	cout << "1- Add Specialization" << endl;
+	cout << "2- Remove Specialization" << endl;
+	cout << "3- Update Specialization" << endl;
+	cout << "4- Show all Specializations" << endl;
 	cout << "0- Back to the main menu" << endl;
 }
 
@@ -281,8 +286,10 @@ string Hospital::add_specialization()
 {
 	string specialization;
 	cout << "Enter new specialization: ";
-	cin >> specialization;
+	cin.ignore();	
+	getline(cin, specialization);
 	db.add_specialization(specialization);
+	dm.save_specialization(specialization, "Specializations.txt");
 	return specialization;
 }
 

@@ -35,6 +35,7 @@ int main()
 						{
 						case 1:
 						{
+							system("cls");
 							cout << "Doctor information" << endl;
 							d->display();
 							Sleep(3000);
@@ -42,12 +43,14 @@ int main()
 						}
 						case 2: 
 						{
+							system("cls");
 							cout << "Current patients number is : " << d->get_patient_number() << endl;
 							Sleep(3000);
 							break;
 						}
 						case 3:
 						{
+							system("cls");
 							string patient_id;
 							Patient *p;
 							cout << "Current Patient information" << endl;
@@ -55,6 +58,7 @@ int main()
 							p = h.find_patient(patient_id);
 							p->display();
 							Sleep(3000);
+							break;
 						}
 						case 0:
 							break;
@@ -97,7 +101,42 @@ int main()
 						{
 						case 1:
 						{
-							h.Doctor_HUB();
+							int choiseDH;
+							do
+							{
+								h.Doctor_HUB();
+								cout << "Enter your choise : ";
+								cin >> choiseDH;
+								switch (choiseDH)
+								{
+									case 1: //add doctor
+									{
+										h.add_doctor();
+										break;
+									}
+									case 2: //remvoe doctor
+									{
+										h.remove_doctor();
+										break;
+									}
+									case 3: //update doctor
+									{
+										h.update_Doctor();
+										break;
+									}
+									case 4:  //find doctor
+									{
+										string national_id;
+										cin >> national_id;
+										h.find_doctor(national_id);
+										break;
+									}
+									case 0: 
+									default :
+										break;
+								}
+							} while (choiseDH != 0);
+							
 							break;
 						}
 						case 2:
@@ -110,12 +149,55 @@ int main()
 							h.Patient_HUB();
 							break;
 						}
+						case 4:
+						{
+							int chooise_SH;
+							do
+							{
+								system("cls");
+								h.Specialization_HUB();
+								cin >> chooise_SH;
+								switch (chooise_SH) 
+								{
+									case 1: // add specialization
+									{
+										system("cls");
+										h.add_specialization();
+										break;
+									}
+									case 2: // remove specialization
+									{
+										system("cls");
+										h.remove_specialization();
+										break;
+									}
+									case 3: // update specialization
+									{
+										system("cls");
+										h.update_Specialization();
+										break;
+									}
+									case 4: // show all specialization
+									{
+										system("cls");
+										h.show_all_specialization();
+										Sleep(5000);
+										break;
+									}
+									case 0:
+									default:
+									break;
+								}
+							} while (chooise_SH!=0);
+							
+							break;
+						}
 						case 0: 
 							break;
 						default:
 							break;
 						}
-					} while (staff_chooise);
+					} while (staff_chooise != 0);
 				}
 				else // Staff have no access
 				{

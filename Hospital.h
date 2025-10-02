@@ -15,6 +15,7 @@ public:
 	void Doctor_HUB();
 	void Staff_HUB();
 	void Patient_HUB();
+	void Specialization_HUB();
 	//add
 	Doctor add_doctor();
 	Staff add_staff();

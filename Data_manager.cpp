@@ -17,7 +17,7 @@ void Data_manager::save_doctor(Doctor d, string file_name)
 	}
 	else
 	{
-		cout << "Error in open file" << endl;
+		cout << "Error in open Doctors file" << endl;
 	}
 }
 
@@ -35,7 +35,7 @@ void Data_manager::save_staff(Staff s, string file_name)
 	}
 	else
 	{
-		cout << "Error in open file" << endl;
+		cout << "Error in open Staff file" << endl;
 	}
 }
 
@@ -51,7 +51,7 @@ void Data_manager::save_patient(Patient p, string file_name)
 	}
 	else
 	{
-		cout << "Error in open file" << endl;
+		cout << "Error in open Patients file" << endl;
 	}
 
 }
@@ -62,10 +62,11 @@ void Data_manager::save_specialization(string specialization, string file_name)
 	if (file.is_open())
 	{
 		file << specialization << endl;
+		file.close();
 	}
 	else
 	{
-		cout << "Error in open file" << endl;
+		cout << "Error in open Specializations file" << endl;
 	}
 }
 
@@ -104,7 +105,7 @@ void Data_manager::load_doctors(vector<Doctor> &Doctors_list, string file_name)
 	}
 	else
 	{
-		cout << "Error in open file" << endl;
+		cout << "Error in open Doctors file" << endl;
 	}
 }
 
@@ -136,7 +137,7 @@ void Data_manager::load_staffs(vector<Staff> &Staffs_list, string file_name)
 	}
 	else
 	{
-		cout << "Error in open file" << endl;
+		cout << "Error in open Staff file" << endl;
 	}
 }
 
@@ -163,7 +164,7 @@ void Data_manager::load_patients(vector<Patient> &Patients_list, string file_nam
 	}
 	else
 	{
-		cout << "Error in open file" << endl;
+		cout << "Error in open patients file" << endl;
 	}
 }
 
@@ -180,6 +181,6 @@ void Data_manager::load_specializations(vector<string> &specializations_list, st
 	}
 	else
 	{
-		cout << "Error in open file" << endl;
+		cout << "Error in open Specializations file" << endl;
 	}
 }
