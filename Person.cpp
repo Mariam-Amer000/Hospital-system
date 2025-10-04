@@ -68,8 +68,8 @@ char Person::get_gender()const
 void Person::display() const
 {
     cout << "Name : " << name << endl;
-    cout << "Age : " << age << endl;
     cout << "National Id : " << national_id << endl;
+    cout << "Age : " << age << endl;
     (gender == 'f' || gender == 'F') ? cout << "Gender : Female" << endl : cout << "Gender : Male" << endl;
 }
 

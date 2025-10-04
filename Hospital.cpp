@@ -4,14 +4,14 @@
 using namespace std;
 void Hospital::main_menu()
 {
-	cout << "Main Menu " << endl;
+	cout << "***** Main Menu *****" << endl;
 	cout << "1- Doctor" << endl;
 	cout << "2- Staff" << endl;
 	cout << "0- Exit" << endl;
 }
 void Hospital::Doctor_menu()
 {
-	cout << "Doctor Menu" << endl;
+	cout << "***** Doctor Menu *****" << endl;
 	cout << "1- Doctor information" << endl;
 	cout << "2- current patients number" << endl;
 	cout << "3- current patient history" << endl;
@@ -19,7 +19,7 @@ void Hospital::Doctor_menu()
 }
 void Hospital::Staff_menu()
 {
-	cout << "Staff Menu" << endl;
+	cout << "***** Staff Menu *****" << endl;
 	cout << "1- Doctor HUP" << endl;
 	cout << "2- Staff HUP" << endl;
 	cout << "3- Patient HUP" << endl;
@@ -29,7 +29,7 @@ void Hospital::Staff_menu()
 }
 void Hospital::Doctor_HUB()
 {
-	cout << "Doctor HUB" << endl;
+	cout << "***** Doctor HUB *****" << endl;
 	cout << "1- Add Doctor" << endl;
 	cout << "2- Remove Doctor" << endl;
 	cout << "3- Update Doctor" << endl;
@@ -39,7 +39,7 @@ void Hospital::Doctor_HUB()
 }
 void Hospital::Staff_HUB()
 {
-	cout << "Staff HUB" << endl;
+	cout << "***** Staff HUB *****" << endl;
 	cout << "1- Add Staff" << endl;
 	cout << "2- Remove Staff" << endl;
 	cout << "3- Update Staff" << endl;
@@ -49,7 +49,7 @@ void Hospital::Staff_HUB()
 }
 void Hospital::Patient_HUB()
 {
-	cout << "Patien HUB" << endl;
+	cout << "***** Patien HUB *****" << endl;
 	cout << "1- Add Patienf" << endl;
 	cout << "2- Remove Patien" << endl;
 	cout << "3- Update Patien" << endl;
@@ -59,7 +59,7 @@ void Hospital::Patient_HUB()
 }
 void Hospital::Specialization_HUB()
 {
-	cout<< "Specialization HUB" << endl;
+	cout<< "***** Specialization HUB *****" << endl;
 	cout << "1- Add Specialization" << endl;
 	cout << "2- Remove Specialization" << endl;
 	cout << "3- Update Specialization" << endl;
@@ -133,7 +133,7 @@ Doctor Hospital::add_doctor()
 			d.set_salary(salary);
 		} while (d.get_salary() == 0);
 
-		cout << "Choose specialization: ";
+		cout << "Choose specialization: " << endl;
 		db.display_specializations();
 		cin >> chooise;
 		d.set_specialization(db.get_specialization(chooise - 1));
@@ -143,7 +143,7 @@ Doctor Hospital::add_doctor()
 			cout << "Enter max patients: ";
 			cin >> max_patient_number;
 			d.set_max_patient_number(max_patient_number);
-		} while (d.get_max_patient_number() == 0);
+		} while (d.get_max_patient_number() != 0);
 
 		cout << "Have acces or not" << endl;
 		cin >> have_access;
@@ -253,7 +253,7 @@ Patient Hospital::add_patient()
 	Patient* found_patient = db.Find_patient(national_id);
 	if (found_patient)
 	{
-		cout << "Staff found" << endl;
+		cout << "Patient found" << endl;
 		p = *found_patient;
 		p.display();
 	}
@@ -263,7 +263,7 @@ Patient Hospital::add_patient()
 		cin.ignore();
 		do
 		{
-			cout << "Enter Staff name: ";
+			cout << "Enter Pateint name: ";
 			getline(cin, name);
 			p.set_name(name);
 		} while (p.get_name() == "0");

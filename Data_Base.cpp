@@ -93,8 +93,11 @@ void Data_Base::display_doctors() const
 	if (Doctors.empty())cout << "There is no doctors yet" << endl;
 	else
 	{
-		for (int i = 0; i < Doctors.size(); i++) {
+		for (int i = 0; i < Doctors.size(); i++) 
+		{
+			cout << "Doctor " << i + 1 << " :" << endl;
 			Doctors.at(i).display();
+			cout << "------------------------" << endl;
 		}
 	}
 }
@@ -103,8 +106,11 @@ void Data_Base::display_staff() const
 	if (Staffs.empty())cout << "There is no Staff yet" << endl;
 	else
 	{
-		for (int i = 0; i < Staffs.size(); i++) {
+		for (int i = 0; i < Staffs.size(); i++) 
+		{
+			cout << "Staff " << i + 1 << " :" << endl;
 			Staffs.at(i).display();
+			cout << "------------------------" << endl;
 		}
 	}
 }
@@ -113,8 +119,11 @@ void Data_Base::display_patients() const
 	if (Patients.empty())cout << "There is no Patients yet" << endl;
 	else
 	{
-		for (int i = 0; i < Patients.size(); i++) {
+		for (int i = 0; i < Patients.size(); i++) 
+		{
+			cout << "Patient " << i + 1 << " :" << endl;
 			Patients.at(i).display();
+			cout << "------------------------" << endl;
 		}
 	}
 }
@@ -125,7 +134,7 @@ void Data_Base::display_specializations() const
 	{
 		for (int i = 0; i < specializations.size(); i++)
 		{
-			cout << i + 1 << ' ' << specializations.at(i) << endl;
+			cout << i + 1 << " : " << specializations.at(i) << endl;
 		}
 	}
 }

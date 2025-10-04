@@ -1,5 +1,6 @@
 #include <iostream>
 #include<Windows.h>
+#include<string>
 using namespace std;
 #include"Hospital.h"
 int main()
@@ -104,6 +105,7 @@ int main()
 							int choiseDH;
 							do
 							{
+								system("cls");
 								h.Doctor_HUB();
 								cout << "Enter your choise : ";
 								cin >> choiseDH;
@@ -111,21 +113,29 @@ int main()
 								{
 									case 1: //add doctor
 									{
+										system("cls");
+										cout << "***** Add Doctor *****" << endl;
 										h.add_doctor();
 										break;
 									}
 									case 2: //remvoe doctor
 									{
+										system("cls");
+										cout << "***** Remove Doctor *****" << endl;
 										h.remove_doctor();
 										break;
 									}
 									case 3: //update doctor
 									{
+										system("cls");
+										cout << "***** Update Doctor *****" << endl;
 										h.update_Doctor();
 										break;
 									}
 									case 4:  //find doctor
 									{
+										system("cls");
+										cout << "***** Find Doctor *****" << endl;
 										string national_id;
 										cin >> national_id;
 										Doctor* d = h.find_doctor(national_id);
@@ -136,8 +146,11 @@ int main()
 									case 5: // show all doctors
 									{
 										system("cls");
+										cout << "***** ALL Doctors` *****" << endl;
 										h.show_all_doctors();
-										Sleep(5000);
+										cout << "\nPress Enter to go back...";
+										cin.ignore();
+										cin.get();
 										break;
 									}
 									case 0: 
@@ -153,6 +166,7 @@ int main()
 							int choiseSH;
 							do
 							{
+								system("cls");
 								h.Staff_HUB();	
 								cin >> choiseSH;
 								switch (choiseSH)
@@ -160,24 +174,28 @@ int main()
 									case 1: // add staff
 									{
 										system("cls");
+										cout << "***** Add Staff *****" << endl;
 										h.add_staff();
 										break;
 									}
 									case 2: // remove staff
 									{
 										system("cls");
+										cout << "***** Remove Staff *****" << endl;          
 										h.remove_staff();
 										break;
 									}
 									case 3: // update staff
 									{
 										system("cls");
+										cout << "***** Update Staff *****" << endl;
 										h.update_Staff();
 										break;
 									}
 									case 4: // find staff
 									{
 										system("cls");
+										cout << "***** Find Staff *****" << endl;
 										string national_id;
 										cin >> national_id;
 										Staff* s = h.find_staff(national_id);
@@ -188,8 +206,11 @@ int main()
 									case 5: // show all staff
 									{
 										system("cls");
+										cout << "***** ALL Staff` *****" << endl;
 										h.show_all_staff();
-										Sleep(5000);
+										cout << "\nPress Enter to go back...";
+										cin.ignore();
+										cin.get();
 										break;
 									}
 									case 0:
@@ -204,6 +225,7 @@ int main()
 							int choisePH;
 							do
 							{
+								system("cls");
 								h.Patient_HUB();
 								cin >> choisePH;
 								switch (choisePH) 
@@ -211,24 +233,28 @@ int main()
 									case 1: // add patient
 									{
 										system("cls");
+										cout << "***** Add Patient *****" << endl;
 										h.add_patient();
 										break;
 									}
 									case 2: // remove patient
 									{
 										system("cls");
+										cout << "***** Remove Patient *****" << endl;
 										h.remove_patient();
 										break;
 									}
 									case 3: // update patient
 									{
 										system("cls");
+										cout << "***** Update Patient *****" << endl;
 										h.update_Patient();
 										break;
 									}
 									case 4: // find patient
 									{
 										system("cls");
+										cout << "***** Find Patient *****" << endl;
 										string national_id;
 										cin >> national_id;
 										Patient* p = h.find_patient(national_id);
@@ -239,8 +265,11 @@ int main()
 									case 5: // show all patient
 									{
 										system("cls");
+										cout << "***** ALL Patients` *****" << endl;
 										h.show_all_patient();
-										Sleep(5000);
+										cout << "\nPress Enter to go back...";
+										cin.ignore();
+										cin.get();
 										break;
 									}
 									case 0:
@@ -263,26 +292,32 @@ int main()
 									case 1: // add specialization
 									{
 										system("cls");
+										cout << "***** Add Specialization *****" << endl;
 										h.add_specialization();
 										break;
 									}
 									case 2: // remove specialization
 									{
 										system("cls");
+										cout << "***** Remove Specialization *****" << endl;
 										h.remove_specialization();
 										break;
 									}
 									case 3: // update specialization
 									{
 										system("cls");
+										cout << "***** Update Specialization *****" << endl;
 										h.update_Specialization();
 										break;
 									}
 									case 4: // show all specialization
 									{
 										system("cls");
+										cout << "***** ALL Specializations` *****" << endl;
 										h.show_all_specialization();
-										Sleep(5000);
+										cout << "\nPress Enter to go back...";
+										cin.ignore();
+										cin.get();   
 										break;
 									}
 									case 0:
