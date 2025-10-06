@@ -4,7 +4,7 @@ class Employee : public Person
 {
 private:
 	double salary;
-	bool have_access = 0;
+	bool have_access = false;
 public:
 	void set_salary(double salary);
 	void set_have_access(bool b);

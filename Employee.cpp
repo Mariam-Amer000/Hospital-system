@@ -27,6 +27,7 @@ void Employee::display() const
 {
     Person::display();
     cout << "Salary : " << salary << endl;
+	cout << "Have Access : " << (have_access ? "Yes" : "No") << endl;
 }
 
 Employee::Employee()
