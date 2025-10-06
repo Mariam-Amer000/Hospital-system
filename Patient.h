@@ -10,6 +10,9 @@ class Patient :
 private:
     vector<Medical_Record>history;
 public:
+    void add_medical_record(Medical_Record m);
+    void update_medical_record();
+    void remove_medical_record();
     void show_history()const;
     void display()const override;
     void show_last_visit();

@@ -55,6 +55,7 @@ void Hospital::Patient_HUB()
 	cout << "3- Update Patien" << endl;
 	cout << "4- Find Patienf" << endl;
 	cout << "5- show all Patients" << endl;
+	cout << "6- reserve date" << endl;
 	cout << "0- Back to the main menu" << endl;
 }
 void Hospital::Specialization_HUB()
@@ -66,6 +67,8 @@ void Hospital::Specialization_HUB()
 	cout << "4- Show all Specializations" << endl;
 	cout << "0- Back to the main menu" << endl;
 }
+
+
 
 Doctor Hospital::add_doctor()
 {
@@ -543,9 +546,9 @@ void Hospital::update_Staff()
 void Hospital::update_Patient()
 {
 	string national_id;
-	cout << "Enter doctor national ID to update: ";
+	cout << "Enter Patiend national ID to update: ";
 	cin >> national_id;
-	Doctor* found = find_doctor(national_id);
+	Patient* found = find_patient(national_id);
 	if (found)
 	{
 		int choise;
@@ -556,6 +559,7 @@ void Hospital::update_Patient()
 			cout << "2- Name" << endl;
 			cout << "3- Age" << endl;
 			cout << "4- Gender" << endl;
+			cout << "5- history" << endl; //åÓíÈ ÌÒÁ ÇáÊÚÏíá ÈÓ ÇãÇ ÇáÇÕÇÝå æÇáÍÐÝ áÇ 
 			cout << "0- Back" << endl;
 			cout << "Enter your choice: ";
 			cin >> choise;
@@ -591,6 +595,11 @@ void Hospital::update_Patient()
 				cout << "Enter new age: ";
 				cin >> new_gender;
 				found->set_gender(new_gender);
+				break;
+			}
+			case 5:
+			{
+				//update medical record
 				break;
 			}
 			case 0:

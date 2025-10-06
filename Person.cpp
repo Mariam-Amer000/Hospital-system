@@ -1,32 +1,19 @@
 #include "Person.h"
 void Person::set_name(string name)
 {
-    //ÇÊÇßÏäÇ Çä ÇáÇÓã ÑÈÇÚí æßãÇä ßá ÇÓã ãä ÇáÇÑÈÚå Èíäå æÈíä ÇáÊÇäí ãÓÇİå æÇÍÏå ÈÓ
-    string full_name;
-    int word_count = 0;
-    bool inside_word = false;
-    for (char letter : name)
+    stringstream ss(name);
+    string word;
+    vector<string>words;
+    while (ss >> word) // åíŞÑÃ ßá ßáãÉ ãäİÕøáÉ ÈãÓÇİÉ
     {
-        if (isspace(letter)) 
-        {
-            if (inside_word)
-            {
-                word_count++;
-                full_name += ' ';
-                inside_word = false;
-            }
-          
-        }
-        else
-        {
-            full_name += letter;
-            inside_word = true;
-        }
-        
+        words.push_back(word);
     }
-    if (inside_word)word_count++;
-    if (word_count == 4)this->name = full_name;
-    else this->name = "0";
+    if (words.size() >= 4)
+    {
+        this->name = words[0] + ' ' + words[1] + ' ' + words[2] + ' ' + words[3];
+    }
+    else
+        this->name = "";
 }
 void Person::set_age(int age)
 {
@@ -36,12 +23,13 @@ void Person::set_age(int age)
 
 void Person::set_national_id(string national_id)
 {
-    this->national_id = national_id;
+    if(id_validation(national_id))this->national_id = national_id;
+	else this->national_id = "0";
 }
 
 void Person::set_gender(char gender)
 {
-    if (gender == 'f' || gender == 'F' || gender == 'm' || gender == 'M')this->gender = gender;
+    if (gender == 'f' || gender == 'F' || gender == 'm' || gender == 'M')this->gender = toupper(gender);
     else this->gender = '0';
 }
 
@@ -70,18 +58,39 @@ void Person::display() const
     cout << "Name : " << name << endl;
     cout << "National Id : " << national_id << endl;
     cout << "Age : " << age << endl;
-    (gender == 'f' || gender == 'F') ? cout << "Gender : Female" << endl : cout << "Gender : Male" << endl;
+
+    if (gender == 'f' || gender == 'F')
+        cout << "Gender : Female" << endl;
+
+    else if (gender == 'm' || gender == 'M') 
+        cout << "Gender : Male" << endl;
+
+}
+
+bool Person::id_validation(string id)
+{
+	if (id.size() != 14) return false;
+    else
+    {
+        for(char c : id)
+        {
+            if(!isdigit(c)) return false;
+		}
+    }
+	return true;
 }
 
 Person::Person()
 {
 }
 
-Person::Person(string name, int age, string id, char gender) : national_id(id), gender(gender)
+Person::Person(string name, int age, string id, char gender) 
 {
     //should implement validation here 
+	set_national_id(id);
     set_name(name);
     set_age(age);
+    set_gender(gender);
 }
 
 Person::~Person()

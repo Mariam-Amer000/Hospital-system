@@ -21,11 +21,13 @@ public:
 	Staff add_staff();
 	Patient add_patient();
 	string add_specialization();
+	void add_medical_Record();
 	//remove
 	void remove_doctor();
 	void remove_patient();
 	void remove_staff();
 	void remove_specialization();
+	void remove_medical_record();
 	//display
 	void show_all_doctors();
 	void show_all_staff();

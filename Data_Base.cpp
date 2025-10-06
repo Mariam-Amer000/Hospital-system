@@ -221,6 +221,18 @@ void Data_Base::load_Specializations()
 	dm.load_specializations(specializations, "Specializations.txt");
 }
 
+void Data_Base::display_doctors_with_specialization(string specialization) const
+{
+	for (int i = 0; i < Doctors.size(); i++)
+	{
+		if(Doctors.at(i).get_specialization()== specialization)
+		{
+			cout << i + 1 << "- " << Doctors.at(i).get_name() << "have " << Doctors.at(i).get_patient_number() << "Patient" << endl;
+			cout << "------------------------" << endl;
+		}
+	}
+}
+
 
 
 

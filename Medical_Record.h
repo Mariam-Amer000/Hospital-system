@@ -21,10 +21,20 @@ public:
 	string get_doctor_name()const;
 	int get_docotor_national_id()const;
 
+	//symptomes
+	void add_symptom(string symptoms);
+	void remove_symptom(int index);
+	void update_symptom(int index, string new_symptom);
+	void dispaly_symptoms()const;
+
+	//medicins
+	void add_medicin(string medicin);
+	void remove_medicin(int index);
+	void update_medicin(int index, string new_medicin);
+	void dispaly_medicins()const;
+
 	//other 
 	void display()const;
-	void add_symptom(string symptoms);
-	void add_medicin(string medicin);
 	Medical_Record();
 	Medical_Record(string doctor_Specialization, string doctor_name, int docotor_national_id);
 	~Medical_Record();

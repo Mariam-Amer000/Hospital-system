@@ -45,6 +45,7 @@ public:
 	void load_Staffs();
 	void load_Patients();
 	void load_Specializations();
-
+	//doctors with specialization
+	void display_doctors_with_specialization(string specialization)const;
 };
 
