@@ -6,7 +6,7 @@ class Staff :
 private:
 public:
     Staff();
-    Staff(string name, int age, string id, char gender, double salary, bool have_access);
+    Staff(const string& name, int age, const string& id, char gender, double salary, bool have_access);
     ~Staff();
 };
 
