@@ -49,7 +49,7 @@ public:
 	Staff* Find_staff(const string& id);
 	Patient* Find_patient(const string& id);
 	string get_specialization(int index);
-	string Find_id(const string& id);
+	bool Find_id(const string& id);
 
 	//load
 	void load_Doctors();

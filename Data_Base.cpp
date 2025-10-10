@@ -214,7 +214,7 @@ void Data_Base::display_doctors_with_their_specialization(const string& speciali
 	{
 		if(Doctors.at(i).get_specialization()== specialization)
 		{
-			cout << i + 1 << "- " << Doctors.at(i).get_name() << "have " << Doctors.at(i).get_patient_number() << "Patient" << endl;
+			cout << i + 1 << "- " << Doctors.at(i).get_name() << " has " << Doctors.at(i).get_patient_number() << "Patient" << endl;
 			cout << "------------------------" << endl;
 		}
 	}
